@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import { renderComponent } from '../../utils/testHelpers';
-import Home from './index';
+import Home from './Home';
 
 describe('<Home />', () => {
 

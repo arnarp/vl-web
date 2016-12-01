@@ -1,0 +1,11 @@
+:root {
+  --vl-gray: #717171;
+  --vl-red: #ba0022;
+}
+
+.appContainer {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  background-color: var(--vl-red);
+}
