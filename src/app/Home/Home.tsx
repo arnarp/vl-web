@@ -1,11 +1,14 @@
 import * as React from 'react';
-const s = require('./Home.css');
+import { style } from 'typestyle';
+
+const homeStyle = style({
+  textAlign: 'center',
+});
 
 export default class Home extends React.Component<any, any> {
   public render() {
     return (
-      <div className={s.home}>
-        <img src={require('./barbar.png')} />
+      <div className={homeStyle}>
         <p>Hello!</p>
       </div>
     );

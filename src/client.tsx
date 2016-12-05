@@ -1,7 +1,6 @@
 import * as e6p from 'es6-promise';
 (e6p as any).polyfill();
 import 'isomorphic-fetch';
-
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
@@ -11,6 +10,7 @@ const { ReduxAsyncConnect } = require('redux-connect');
 import configureStore from './store/configureStore';
 import 'isomorphic-fetch';
 import routes from './routes';
+import { setStylesTarget } from 'typestyle';
 
 const store = configureStore(
   browserHistory,
@@ -30,3 +30,7 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('app')
 );
+const stylesTrgt = document.getElementById('styles-target');
+if (stylesTrgt) {
+  setStylesTarget(stylesTrgt);
+}

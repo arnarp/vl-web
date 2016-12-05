@@ -9,7 +9,6 @@ import {
 } from './actions';
 import ICounterState from './state';
 const { connect } = require('react-redux');
-const s = require('./counter.cmp.css');
 
 interface IProps {
   counter: ICounterState;
@@ -30,7 +29,7 @@ export default class Counter extends React.Component<IProps, void> {
     const { increment, decrement, counter } = this.props;
 
     return (
-      <div className={s.counter}>
+      <div>
         <h4>Counter Example</h4>
         <button
           name="incBtn"

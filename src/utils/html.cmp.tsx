@@ -1,6 +1,7 @@
 import IStore from '../store';
 import * as React from 'react';
 import * as Helmet from 'react-helmet';
+import { css } from 'typestyle';
 
 interface IHtmlProps {
   manifest?: Object;
@@ -43,6 +44,9 @@ export default class Html extends React.Component<IHtmlProps, {}> {
           {head.script.toComponent()}
 
           {renderStyles}
+          <style>
+            ${css()}
+          </style>
           <link rel="shortcut icon" href="/favicon.ico" />
         </head>
         <body>
