@@ -40,3 +40,6 @@ typings
 
 # JetBrains
 .idea
+
+# Yarn
+yarn.lock

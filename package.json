@@ -1,7 +1,7 @@
 {
-  "name": "vortigern",
+  "name": "vl-web",
   "version": "0.1.0",
-  "description": "A universal boilerplate for building web applications w/ TypeScript, React, Redux and more.",
+  "description": "",
   "main": "build/server.js",
   "scripts": {
     "clean": "rimraf build",
@@ -15,49 +15,17 @@
     "test": "node_modules/.bin/karma start config/test/karma.conf.js",
     "lint": "node_modules/.bin/tslint \"src/**/**.ts*\""
   },
-  "author": "Barbar Startup Factory <hey@barbar.com.tr>",
-  "contributors": [
-    {
-      "name": "Altay Aydemir",
-      "email": "altay@peergust.com",
-      "url": "http://altayaydemir.com/"
-    },
-    {
-      "name": "Batuhan Icoz",
-      "email": "hey@batuhanicoz.com",
-      "url": "http://batuhanicoz.com/"
-    },
-    {
-      "name": "Omer Ufuk Efendioglu",
-      "email": "ufukomer@gmail.com",
-      "url": "http://ufukomer.com/"
-    }
-  ],
-  "homepage": "https://github.com/barbar/vortigern.git",
+  "author": "Arnar Páll Birgisson <arnarp@gmail.com>",
+  "homepage": "https://github.com/arnarp/vl-web.git",
   "repository": {
     "type": "git",
-    "url": "https://github.com/barbar/vortigern.git"
+    "url": "https://github.com/arnarp/vl-web.git"
   },
   "bugs": {
-    "url": "https://github.com/barbar/vortigern/issues"
+    "url": "https://github.com/arnarp/vl-web/issues"
   },
   "keywords": [
-    "react",
-    "redux",
-    "typescript",
-    "webpack",
-    "universal",
-    "isomorphic",
-    "starter",
-    "kit",
-    "boilerplate",
-    "hot reload",
-    "react-hot-loader",
-    "enzyme",
-    "mocha",
-    "chai"
   ],
-  "license": "MIT",
   "devDependencies": {
     "@types/base16": "^1.0.1",
     "@types/chai": "^3.4.34",
