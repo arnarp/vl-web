@@ -42,7 +42,8 @@ export default class Html extends React.Component<IHtmlProps, {}> {
           {head.meta.toComponent()}
           {head.link.toComponent()}
           {head.script.toComponent()}
-
+          <link rel="stylesheet" type="text/css"
+            href="https://fonts.googleapis.com/css?family=Poppins:light,regular,medium|Playfair+Display:bold" />
           {renderStyles}
           <style>
             ${css()}
