@@ -17,6 +17,7 @@ const headerStyle = style({
 
 interface IStateProps {
   isMenuToggled: boolean;
+  hasMenuBeenToggled: boolean;
 };
 interface IDispatchProps {
   toggleMenu: Redux.ActionCreator<IToggleMenuAction>;
@@ -30,6 +31,7 @@ class Header extends React.Component<IStateProps & IDispatchProps & IHeaderProps
       <div className={headerStyle}>
         <MenuButton
           isToggled={this.props.isMenuToggled}
+          hasMenuBeenToggled={this.props.hasMenuBeenToggled}
           onClick={this.props.toggleMenu} />
       </div>
     );
@@ -40,6 +42,7 @@ const mapStateToProps = (state: IStore) => {
   console.log('mapstate ' + JSON.stringify(state));
   return {
     isMenuToggled: state.shell.isMenuToggled,
+    hasMenuBeenToggled: state.shell.hasMenuBeenToggled,
   };
 };
 

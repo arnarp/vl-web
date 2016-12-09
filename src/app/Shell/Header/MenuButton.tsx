@@ -30,6 +30,34 @@ const spanAfterAnimation = keyframes({
     transform: 'translate(-50%, 0) rotate(-45deg)',
   },
 });
+const spanBeforeBackAnimation = keyframes({
+  '0%': {
+    transform: 'translate(-50%, 0) rotate(45deg)',
+  },
+  '40%': {
+    transform: 'translate(-50%, 0)',
+  },
+  '60%': {
+    transform: 'translate(-50%, 0)',
+  },
+  '100%': {
+    transform: 'translate(-50%, -1.4rem)',
+  },
+});
+const spanAfterBackAnimation = keyframes({
+  '0%': {
+    transform: 'translate(-50%, 0) rotate(-45deg)',
+  },
+  '40%': {
+    transform: 'translate(-50%, 0)',
+  },
+  '60%': {
+    transform: 'translate(-50%, 0)',
+  },
+  '100%': {
+    transform: 'translate(-50%, 1.4rem)',
+  },
+});
 const buttonStyle = style({
   height: '5.5rem',
   width: '5.5rem',
@@ -41,6 +69,9 @@ const buttonStyle = style({
       outline: 'none',
     },
     '&:hover': {
+      background: 'rgba(0,0,0,0.05)',
+    },
+    '&:active': {
       background: 'rgba(0,0,0,0.1)',
     },
   },
@@ -72,7 +103,7 @@ const spanDefaultStyle = style({
     },
   },
 });
-const spanCloseStyle = style({
+const toggleOnSpanStyle = style({
   background: 'transparent',
   $nest: {
     '&:before': {
@@ -85,16 +116,29 @@ const spanCloseStyle = style({
     },
   },
 });
+const toggleOffSpanStyle = style({
+  $nest: {
+    '&:before': {
+      animation: `${spanBeforeBackAnimation} 0.5s forwards`,
+    },
+    '&:after': {
+      animation: `${spanAfterBackAnimation} 0.5s forwards`,
+    },
+  },
+});
 
 interface IMenuButtonProps {
   isToggled: boolean;
+  hasMenuBeenToggled: boolean;
   onClick: () => void;
 }
 
 export default (props: IMenuButtonProps) => {
   const spanStyle = classes(
     spanDefaultStyle,
-    props.isToggled && spanCloseStyle);
+    props.isToggled && toggleOnSpanStyle,
+    !props.isToggled && props.hasMenuBeenToggled && toggleOffSpanStyle,
+  );
   return (
     <button name="toggleMenu"
       className={buttonStyle}
