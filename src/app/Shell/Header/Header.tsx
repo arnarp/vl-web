@@ -6,14 +6,26 @@ import { createToggleMenuAction } from '../action.creators';
 import { connect } from 'react-redux';
 import IStore from '../../../store';
 
+const leftStyle = style({
+  width: '25%',
+});
+const centerStyle = style({
+  width: '50%',
+  display: 'flex',
+  justifyContent: 'center',
+});
+const rightStyle = style({
+  width: '25%',
+});
 const headerStyle = style({
   display: 'flex',
   height: '5.5rem',
 });
 
-// const imgStyle = style({
-//   height: '5rem',
-// });
+const imgStyle = style({
+  height: '5rem',
+  alignSelf: 'center',
+});
 
 interface IStateProps {
   isMenuToggled: boolean;
@@ -29,10 +41,16 @@ class Header extends React.Component<IStateProps & IDispatchProps & IHeaderProps
     console.log('Header ' + this.props);
     return (
       <div className={headerStyle}>
-        <MenuButton
-          isToggled={this.props.isMenuToggled}
-          hasMenuBeenToggled={this.props.hasMenuBeenToggled}
-          onClick={this.props.toggleMenu} />
+        <div className={leftStyle}>
+          <MenuButton
+            isToggled={this.props.isMenuToggled}
+            hasMenuBeenToggled={this.props.hasMenuBeenToggled}
+            onClick={this.props.toggleMenu} />
+        </div>
+        <div className={centerStyle}>
+          <img className={imgStyle} src={require('./logo.svg')} />
+        </div>
+        <div className={rightStyle} />
       </div>
     );
   }
@@ -52,5 +70,3 @@ const mapDispatchToProps = (dispatch: any) => ({
 
 export default connect<IStateProps, IDispatchProps, IHeaderProps>(
   mapStateToProps, mapDispatchToProps)(Header);
-
-// <img className={imgStyle} src={require('./logo.svg')} />
