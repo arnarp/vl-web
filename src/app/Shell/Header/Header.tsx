@@ -23,6 +23,7 @@ const headerStyle = style({
   display: 'flex',
   height: '5.5rem',
   width: '100%',
+  padding: '0 1rem',
   position: 'fixed',
   background: 'white',
 });

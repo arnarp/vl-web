@@ -3,7 +3,7 @@ import * as React from 'react';
 import * as Helmet from 'react-helmet';
 import Header from './Header';
 import SubHeader from './SubHeader';
-import { style, cssRule, media } from 'typestyle';
+import { style, cssRule } from 'typestyle';
 import { setupPage, normalize } from 'csstips';
 import { VlLogoGrey } from './colors';
 
@@ -20,6 +20,8 @@ cssRule('button', {
   background: 'transparent',
   border: `solid 0.1rem ${VlLogoGrey.toHexString()}`,
   fontSize: '1.4rem',
+  color: 'inherit',
+  fontWeight: 'lighter',
 });
 cssRule('a', {
   color: 'inherit',
@@ -27,11 +29,9 @@ cssRule('a', {
 });
 
 const shellClass = style({
-  padding: '0 2rem',
   margin: 0,
   textAlign: 'left',
-}, media({maxWidth: 450}, { padding: '0 1.5rem'}),
-  media({maxWidth: 430}, { padding: '0 1.0rem'}));
+});
 
 export default class Shell extends React.Component<{}, {}> {
   public render() {

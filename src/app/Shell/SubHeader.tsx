@@ -5,6 +5,7 @@ import { hideAt } from 'utils/style';
 
 const navListStyle = style({
   height: '8.5rem',
+  padding: '0 1rem',
   fontSize: '1.5rem',
   fontWeight: 'lighter',
   display: 'flex',
