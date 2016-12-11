@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { style } from 'typestyle';
+import { style, media } from 'typestyle';
 import MenuButton from './MenuButton';
 import { IToggleMenuAction } from '../actions';
 import { createToggleMenuAction } from '../action.creators';
@@ -9,25 +9,23 @@ import Logo from './Logo';
 import { VlLogoRed } from 'app/Shell/colors';
 
 const leftStyle = style({
-  width: '25%',
+  width: '15%',
 });
 const centerStyle = style({
-  width: '50%',
+  width: '70%',
   display: 'flex',
   justifyContent: 'center',
-});
+}, media({minWidth: 0, maxWidth: 400}, {width: '85%'}));
 const rightStyle = style({
-  width: '25%',
-});
+  width: '15%',
+}, media({minWidth: 0, maxWidth: 400}, {display: 'none'}));
 const headerStyle = style({
   display: 'flex',
   height: '5.5rem',
 });
-
 const imgStyle = style({
   height: '5rem',
 });
-
 const phoneNumberStyle = style({
   fontSize: '3rem',
   fontFamily: 'Playfair Display',
