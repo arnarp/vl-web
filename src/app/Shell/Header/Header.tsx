@@ -4,9 +4,9 @@ import MenuButton from './MenuButton';
 import { IToggleMenuAction } from '../actions';
 import { createToggleMenuAction } from '../action.creators';
 import { connect } from 'react-redux';
-import IStore from '../../../store';
+import IStore from 'store';
 import Logo from './Logo';
-import { VlLogoRed } from '../colors';
+import { VlLogoRed } from 'app/Shell/colors';
 
 const leftStyle = style({
   width: '25%',

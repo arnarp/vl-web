@@ -11,7 +11,8 @@ var config = {
 
   resolve: {
     root: path.resolve(__dirname),
-    extensions: ['', '.ts', '.tsx', '.js', '.jsx']
+    extensions: ['', '.ts', '.tsx', '.js', '.jsx'],
+    modulesDirectories: ['node_modules', 'src']
   },
 
   entry: {
