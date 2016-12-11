@@ -10,7 +10,7 @@ const { ReduxAsyncConnect } = require('redux-connect');
 import configureStore from './store/configureStore';
 import 'isomorphic-fetch';
 import routes from './routes';
-import { setStylesTarget } from 'typestyle';
+import { setCssTarget } from 'typestyle';
 
 const store = configureStore(
   browserHistory,
@@ -30,7 +30,7 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('app')
 );
-const stylesTrgt = document.getElementById('styles-target');
-if (stylesTrgt) {
-  setStylesTarget(stylesTrgt);
+const stylesTrgt = document.getElementById('css-target');
+if (stylesTrgt && stylesTrgt.textContent !== null) {
+  setCssTarget(stylesTrgt as any);
 }

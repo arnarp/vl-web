@@ -5,6 +5,8 @@ import { IToggleMenuAction } from '../actions';
 import { createToggleMenuAction } from '../action.creators';
 import { connect } from 'react-redux';
 import IStore from '../../../store';
+import Logo from './Logo';
+import { VlLogoRed } from '../colors';
 
 const leftStyle = style({
   width: '25%',
@@ -24,7 +26,15 @@ const headerStyle = style({
 
 const imgStyle = style({
   height: '5rem',
-  alignSelf: 'center',
+});
+
+const phoneNumberStyle = style({
+  fontSize: '3rem',
+  fontFamily: 'Playfair Display',
+  color: VlLogoRed,
+  fontWeight: 'lighter',
+  display: 'flex',
+  alignItems: 'flex-end',
 });
 
 interface IStateProps {
@@ -48,7 +58,8 @@ class Header extends React.Component<IStateProps & IDispatchProps & IHeaderProps
             onClick={this.props.toggleMenu} />
         </div>
         <div className={centerStyle}>
-          <img className={imgStyle} src={require('./logo.svg')} />
+          <Logo className={imgStyle} />
+          <span className={phoneNumberStyle}>5551810</span>
         </div>
         <div className={rightStyle} />
       </div>
@@ -57,7 +68,6 @@ class Header extends React.Component<IStateProps & IDispatchProps & IHeaderProps
 }
 
 const mapStateToProps = (state: IStore) => {
-  console.log('mapstate ' + JSON.stringify(state));
   return {
     isMenuToggled: state.shell.isMenuToggled,
     hasMenuBeenToggled: state.shell.hasMenuBeenToggled,

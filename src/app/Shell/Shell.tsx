@@ -4,7 +4,7 @@ import * as Helmet from 'react-helmet';
 import Header from './Header';
 import Menu from './Menu';
 import { style, cssRule } from 'typestyle';
-import { setupPage, normalize } from 'typestyle/lib/csx';
+import { setupPage, normalize } from 'csstips';
 import { VlLogoGrey } from './colors';
 
 setupPage('#app');

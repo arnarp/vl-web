@@ -1,7 +1,7 @@
 import IStore from '../store';
 import * as React from 'react';
 import * as Helmet from 'react-helmet';
-import { css } from 'typestyle';
+import { getCss } from 'typestyle';
 
 interface IHtmlProps {
   manifest?: Object;
@@ -43,10 +43,10 @@ export default class Html extends React.Component<IHtmlProps, {}> {
           {head.link.toComponent()}
           {head.script.toComponent()}
           <link rel="stylesheet" type="text/css"
-            href="https://fonts.googleapis.com/css?family=Poppins:light,regular,medium|Playfair+Display:bold" />
+            href="https://fonts.googleapis.com/css?family=Poppins:light,regular,medium|Playfair+Display:light" />
           {renderStyles}
-          <style>
-            ${css()}
+          <style id="css-target">
+            ${getCss()}
           </style>
           <link rel="shortcut icon" href="/favicon.ico" />
         </head>
