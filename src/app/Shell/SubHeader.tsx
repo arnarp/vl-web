@@ -4,12 +4,12 @@ import { style } from 'typestyle';
 import { hideAt } from 'utils/style';
 
 const navListStyle = style({
-  display: 'flex',
-  justifyContent: 'space-between',
-  alignItems: 'center',
+  height: '8.5rem',
   fontSize: '1.5rem',
   fontWeight: 'lighter',
-  height: '3rem',
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'flex-end',
   $nest: {
     '&>*:hover': {
       textDecoration: 'underline',

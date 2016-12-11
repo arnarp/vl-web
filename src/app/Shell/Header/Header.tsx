@@ -22,6 +22,9 @@ const rightStyle = style({
 const headerStyle = style({
   display: 'flex',
   height: '5.5rem',
+  width: '100%',
+  position: 'fixed',
+  background: 'white',
 });
 const imgStyle = style({
   height: '5rem',

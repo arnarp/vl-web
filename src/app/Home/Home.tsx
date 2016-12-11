@@ -5,6 +5,8 @@ import { VlLogoRed } from '../Shell/colors';
 const homeStyle = style({
   textAlign: 'center',
   color: VlLogoRed.darken(0.1),
+  height: '150vh',
+  background: 'lightyellow',
 });
 
 export default class Home extends React.Component<any, any> {
