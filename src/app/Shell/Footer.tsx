@@ -8,7 +8,7 @@ export const FOOTER_HEIGHT = 18;
 const footerStyle = style(flex, vertical, center, {
   height: `${FOOTER_HEIGHT}rem`,
   background: VlLogoGrey.lighten(0.5),
-  padding: '3rem 1rem',
+  padding: '2rem 1rem',
   color: VlLogoGrey,
   lineHeight: '1.5',
   fontSize: '1.2rem',
@@ -18,6 +18,7 @@ const footerStyle = style(flex, vertical, center, {
       height: '0.1rem',
       width: '80%',
       background: VlLogoRed,
+      marginBottom: '2rem',
     },
   },
 });
@@ -25,7 +26,6 @@ const infoStyle = style(
   flex,
   vertical,
   {
-    justifyContent: 'flex-end',
     height: '100%',
   });
 
