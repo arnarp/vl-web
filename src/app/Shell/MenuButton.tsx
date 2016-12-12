@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { style, classes, keyframes } from 'typestyle';
-import { VlLogoGrey, VlLogoRed } from '../colors';
+import { VlLogoGrey, VlLogoRed } from './colors';
 
 const spanBeforeAnimation = keyframes({
   '0%': {

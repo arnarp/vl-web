@@ -1,12 +1,13 @@
 const appConfig = require('../../../config/main');
 import * as React from 'react';
 import * as Helmet from 'react-helmet';
-import Header from './Header';
+import { Header } from './Header';
 import { SubHeader, SUB_HEADER_HEIGHT } from './SubHeader';
 import { style, cssRule } from 'typestyle';
 import { setupPage, normalize } from 'csstips';
 import { VlLogoGrey } from './colors';
 import { Footer, FOOTER_HEIGHT } from './Footer';
+import { SideNav } from './SideNav';
 
 setupPage('#app');
 normalize();
@@ -44,6 +45,7 @@ export default class Shell extends React.Component<{}, {}> {
         <Helmet {...appConfig.app} {...appConfig.app.head} />
         <Header />
         <SubHeader />
+        <SideNav />
         <main className={mainStyle}>
           {this.props.children}
         </main>

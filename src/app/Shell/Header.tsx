@@ -1,12 +1,14 @@
 import * as React from 'react';
 import { style, media } from 'typestyle';
 import MenuButton from './MenuButton';
-import { IToggleMenuAction } from '../actions';
-import { createToggleMenuAction } from '../action.creators';
+import { IToggleMenuAction } from './actions';
+import { createToggleMenuAction } from './action.creators';
 import { connect } from 'react-redux';
 import IStore from 'store';
 import Logo from './Logo';
 import { VlLogoRed } from 'app/Shell/colors';
+
+export const HEADER_HEIGHT = 5.5;
 
 const leftStyle = style({
   width: '15%',
@@ -21,7 +23,7 @@ const rightStyle = style({
 }, media({minWidth: 0, maxWidth: 400}, {display: 'none'}));
 const headerStyle = style({
   display: 'flex',
-  height: '5.5rem',
+  height: `${HEADER_HEIGHT}rem`,
   width: '100%',
   padding: '0 1rem',
   position: 'fixed',
@@ -48,9 +50,8 @@ interface IDispatchProps {
 };
 interface IHeaderProps { }
 
-class Header extends React.Component<IStateProps & IDispatchProps & IHeaderProps, any> {
+class HeaderBase extends React.Component<IStateProps & IDispatchProps & IHeaderProps, any> {
   public render() {
-    console.log('Header ' + this.props);
     return (
       <div className={headerStyle}>
         <div className={leftStyle}>
@@ -80,5 +81,5 @@ const mapDispatchToProps = (dispatch: any) => ({
   toggleMenu: () => dispatch(createToggleMenuAction()),
 });
 
-export default connect<IStateProps, IDispatchProps, IHeaderProps>(
-  mapStateToProps, mapDispatchToProps)(Header);
+export const Header = connect<IStateProps, IDispatchProps, IHeaderProps>(
+  mapStateToProps, mapDispatchToProps)(HeaderBase);
