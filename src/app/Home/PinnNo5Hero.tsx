@@ -2,7 +2,7 @@ import * as React from 'react';
 import { style } from 'typestyle';
 
 const divStyle = style({
-  height: 'calc(100vh - 10rem)',
+  height: 'calc(100vh - 21rem)',
   backgroundImage: `url(${require('app/assets/pinn_no_5.jpg')})`,
   backgroundRepeat: 'no-repeat',
   backgroundPosition: '-11rem top',

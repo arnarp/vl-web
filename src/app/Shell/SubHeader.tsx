@@ -3,8 +3,9 @@ import { Link } from 'react-router';
 import { style } from 'typestyle';
 import { hideAt } from 'utils/style';
 
+export const SUB_HEADER_HEIGHT = 8.5;
 const navListStyle = style({
-  height: '8.5rem',
+  height: `${SUB_HEADER_HEIGHT}rem`,
   padding: '0 1rem',
   fontSize: '1.5rem',
   fontWeight: 'lighter',
@@ -18,7 +19,7 @@ const navListStyle = style({
   },
 });
 
-export default () => (
+export const SubHeader = () => (
   <nav className={navListStyle}>
     <Link to="veislumatur">Veislumatur</Link>
     <Link to="smurbraud" className={hideAt(380)}>Smurbraud</Link>
