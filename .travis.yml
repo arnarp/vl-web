@@ -2,7 +2,7 @@ language: node_js
 node_js:
   - "5"
 env:
-  - NODE_ENV=ci
+  - NODE_ENV=production
 cache:
   directories:
   - node_modules
@@ -14,3 +14,9 @@ before_script:
 script:
   - npm run build
   - npm test
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: scripts/deploy.sh
+  on:
+    branch: master
