@@ -6,9 +6,9 @@
   "scripts": {
     "clean": "rm -rf build",
     "prebuild": "npm run clean",
-    "build": "node_modules/.bin/webpack --config config/webpack/index.js",
+    "build": "webpack --config config/webpack/index.js",
     "build:prod": "cross-env NODE_ENV=production npm run build",
-    "postbuild": "node_modules/.bin/webpack --config config/webpack/server.js",
+    "postbuild": "webpack --config config/webpack/server.js",
     "prestart": "npm run build",
     "start": "node build/server.js",
     "start:prod": "cross-env NODE_ENV=production npm start",
