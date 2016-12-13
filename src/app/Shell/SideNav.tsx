@@ -21,7 +21,7 @@ const asideStyle = style(flex, vertical, {
   position: 'fixed',
   right: '100vw',
   top: `${HEADER_HEIGHT}rem`,
-  width: '30rem',
+  width: '25rem',
   height: `calc(100vh - ${HEADER_HEIGHT}rem)`,
   overflow: 'hidden',
   transitionDuration: '600ms',
@@ -30,7 +30,7 @@ const asideStyle = style(flex, vertical, {
   padding: '2rem',
 });
 const asideVisibleStyle = style({
-  right: 'calc(100vw - 30rem)',
+  right: 'calc(100vw - 25rem)',
 });
 const navStyle = style(flex, vertical, {
   lineHeight: '1.5',
@@ -61,7 +61,8 @@ class BaseSideNav extends React.Component<IStateProps & IDispatchProps, any> {
         {this.props.visible ? overlay : null}
         <aside className={classes(asideStyle, this.props.visible && asideVisibleStyle)}>
           <nav className={navStyle}>
-            <Link to="veislumatur">Veislumatur</Link>
+            <Link to="/">Forsíða</Link>
+            <Link to="veislur">Veislur</Link>
             <Link to="smurbraud">Smurbraud</Link>
             <Link to="tertur">Tertur</Link>
             <Link to="smarettir">Smáréttir</Link>
