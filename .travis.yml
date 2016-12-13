@@ -1,21 +1,5 @@
 language: node_js
 node_js:
-  - "6"
-env:
-cache:
-  directories:
-  - node_modules
-install:
-  - npm install
-before_script:
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
+  - "node"
 script:
   - npm run build:prod
-  - npm test
-deploy:
-  skip_cleanup: true
-  provider: script
-  script: scripts/deploy.sh
-  on:
-    branch: master
