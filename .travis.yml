@@ -2,7 +2,6 @@ language: node_js
 node_js:
   - "5"
 env:
-  - NODE_ENV=production
 cache:
   directories:
   - node_modules
@@ -14,7 +13,7 @@ before_script:
   - npm install -g webpack
   - npm install -g karma
 script:
-  - npm run build
+  - npm run build:prod
   - npm test
 deploy:
   skip_cleanup: true
