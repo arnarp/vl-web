@@ -1,11 +1,9 @@
-import ICounterState from 'app/counter/state';
-import IStarsState from 'app/stars/state';
-import IShellState from 'app/shell/state';
+import { IShellState } from 'app/shell/state';
 
-interface IStore {
-  counter: ICounterState;
-  stars: IStarsState;
+export interface IStore {
   shell: IShellState;
 };
 
-export default IStore;
+export { configureStore } from './configureStore';
+export { rootReducer } from './rootReducer';
+export { IUnknownAction } from './IUnknownAction';

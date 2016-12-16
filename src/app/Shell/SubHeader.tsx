@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Link } from 'react-router';
 import { style } from 'typestyle';
 import { hideAt } from 'utils/style';
-import { VlLogoRed, VlLogoGrey } from 'app/shell/colors';
+import { VlLogoRed, VlLogoGrey } from 'app/colors';
 
 export const SUB_HEADER_HEIGHT = 8.5;
 const navListStyle = style({
@@ -27,11 +27,11 @@ const activeLinkStyle = style({
 });
 export const SubHeader = () => (
   <nav className={navListStyle}>
-    <Link activeClassName={activeLinkStyle} to="veislur">Veislur</Link>
-    <Link activeClassName={activeLinkStyle} to="smurbraud" className={hideAt(380)}>Smurbraud</Link>
-    <Link activeClassName={activeLinkStyle} to="tertur">Tertur</Link>
-    <Link activeClassName={activeLinkStyle} to="smarettir">Smáréttir</Link>
-    <Link activeClassName={activeLinkStyle} to="veislusalur" className={hideAt(460)}>Salur</Link>
-    <Link activeClassName={activeLinkStyle} to="motuneyti">Mötuneyti</Link>
+    <Link activeClassName={activeLinkStyle} to='veislur'>Veislur</Link>
+    <Link activeClassName={activeLinkStyle} to='smurbraud' className={hideAt(380)}>Smurbraud</Link>
+    <Link activeClassName={activeLinkStyle} to='tertur'>Tertur</Link>
+    <Link activeClassName={activeLinkStyle} to='smarettir'>Smáréttir</Link>
+    <Link activeClassName={activeLinkStyle} to='veislusalur' className={hideAt(460)}>Salur</Link>
+    <Link activeClassName={activeLinkStyle} to='motuneyti'>Mötuneyti</Link>
   </nav>
 );

@@ -4,7 +4,7 @@ import { flex, vertical, endJustified, center } from 'csstips';
 
 const sectionStyle = style(flex, vertical, endJustified, center, {
   height: 'calc(100vh - 21rem)',
-  backgroundImage: `url(${require('app/assets/steikur_pura.jpg')})`,
+  backgroundImage: `url(https://s3-eu-west-1.amazonaws.com/vl-web/images/steikur_pura_900.jpg)`,
   backgroundRepeat: 'no-repeat',
   backgroundPosition: '-11rem top',
   color: 'white',

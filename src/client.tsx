@@ -7,10 +7,10 @@ import { Provider } from 'react-redux';
 const { Router, browserHistory } = require('react-router');
 import { syncHistoryWithStore } from 'react-router-redux';
 const { ReduxAsyncConnect } = require('redux-connect');
-import configureStore from './store/configureStore';
 import 'isomorphic-fetch';
-import routes from './routes';
 import { setCssTarget } from 'typestyle';
+import { routes } from 'routes';
+import { configureStore } from 'store';
 
 const store = configureStore(
   browserHistory,
@@ -20,7 +20,7 @@ const history = syncHistoryWithStore(browserHistory, store);
 const connectedCmp = (props) => <ReduxAsyncConnect {...props} />;
 
 ReactDOM.render(
-  <Provider store={store} key="provider">
+  <Provider store={store} key='provider'>
     <Router
       history={history}
       render={connectedCmp}

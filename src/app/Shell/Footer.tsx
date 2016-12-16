@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { style } from 'typestyle';
 import { flex, vertical, center } from 'csstips';
-import { VlLogoGrey, VlLogoRed } from 'app/Shell/colors';
+import { VlLogoGrey, VlLogoRed } from 'app/colors';
 
 export const FOOTER_HEIGHT = 18;
 

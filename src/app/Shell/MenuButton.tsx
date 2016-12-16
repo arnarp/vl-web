@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { style, classes, keyframes } from 'typestyle';
-import { VlLogoGrey, VlLogoRed } from './colors';
+import { VlLogoGrey, VlLogoRed } from 'app/colors';
 
 const spanBeforeAnimation = keyframes({
   '0%': {
@@ -133,14 +133,14 @@ interface IMenuButtonProps {
   onClick: () => void;
 }
 
-export default (props: IMenuButtonProps) => {
+export const MenuButton = (props: IMenuButtonProps) => {
   const spanStyle = classes(
     spanDefaultStyle,
     props.isToggled && toggleOnSpanStyle,
     !props.isToggled && props.hasMenuBeenToggled && toggleOffSpanStyle,
   );
   return (
-    <button name="toggleMenu"
+    <button name='toggleMenu'
       className={buttonStyle}
       onClick={props.onClick}>
       <span className={spanStyle}>Valmynd</span>

@@ -3,8 +3,8 @@ import * as React from 'react';
 import { mount } from 'enzyme';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import rootReducer from '../store/rootReducer';
 import configureStore from 'redux-mock-store';
+import { rootReducer } from 'store';
 
 const fetchMock = require('fetch-mock');
 

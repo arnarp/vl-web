@@ -1,5 +1,3 @@
-interface IUnknownAction {
+export interface IUnknownAction {
   type: 'unkownAction';
 }
-
-export default IUnknownAction;

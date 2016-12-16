@@ -3,7 +3,7 @@ import { style } from 'typestyle';
 
 const divStyle = style({
   height: 'calc(100vh - 21rem)',
-  backgroundImage: `url(${require('app/assets/pinn_no_5.jpg')})`,
+  backgroundImage: `url(https://s3-eu-west-1.amazonaws.com/vl-web/images/pinn_no_5_900.jpg)`,
   backgroundRepeat: 'no-repeat',
   backgroundPosition: '-11rem top',
   display: 'flex',
@@ -24,7 +24,7 @@ const btnStyle = style({
   height: '4rem',
 });
 
-export default () => (
+export const PinnNo5Hero = () => (
   <div className={divStyle}>
     <p className={pStyle}>Pinnaborð</p>
     <button className={btnStyle}>Sjá nánar</button>

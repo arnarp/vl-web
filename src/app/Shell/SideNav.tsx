@@ -3,11 +3,11 @@ import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import { style, classes } from 'typestyle';
 import { flex, vertical } from 'csstips';
-import IStore from 'store';
-import { HEADER_HEIGHT } from './Header';
+import { IStore } from 'store';
+import { VlLogoGrey } from 'app/colors';
 import { IToggleMenuAction } from './actions';
-import { createToggleMenuAction } from './action.creators';
-import { VlLogoGrey } from 'app/shell/colors';
+import { createToggleMenuAction } from './action-creators';
+import { HEADER_HEIGHT } from './Header';
 
 const overlayStyle = style({
   position: 'fixed',
@@ -61,14 +61,14 @@ class BaseSideNav extends React.Component<IStateProps & IDispatchProps, any> {
         {this.props.visible ? overlay : null}
         <aside className={classes(asideStyle, this.props.visible && asideVisibleStyle)}>
           <nav className={navStyle}>
-            <Link to="/">Forsíða</Link>
-            <Link to="veislur">Veislur</Link>
-            <Link to="smurbraud">Smurbraud</Link>
-            <Link to="tertur">Tertur</Link>
-            <Link to="smarettir">Smáréttir</Link>
-            <Link to="veislusalur">Salur</Link>
-            <Link to="motuneyti">Mötuneyti</Link>
-            <Link to="about">Um okkur</Link>
+            <Link to='/'>Forsíða</Link>
+            <Link to='veislur'>Veislur</Link>
+            <Link to='smurbraud'>Smurbraud</Link>
+            <Link to='tertur'>Tertur</Link>
+            <Link to='smarettir'>Smáréttir</Link>
+            <Link to='veislusalur'>Salur</Link>
+            <Link to='motuneyti'>Mötuneyti</Link>
+            <Link to='about'>Um okkur</Link>
           </nav>
         </aside>
       </div>

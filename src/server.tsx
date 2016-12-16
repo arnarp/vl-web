@@ -3,18 +3,16 @@ const appConfig = require('../config/main');
 import * as e6p from 'es6-promise';
 (e6p as any).polyfill();
 import 'isomorphic-fetch';
-
 import * as React from 'react';
 import * as ReactDOMServer from 'react-dom/server';
-
 import { Provider } from 'react-redux';
 import { createMemoryHistory, match } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 const { ReduxAsyncConnect, loadOnServer } = require('redux-connect');
-import configureStore from './store/configureStore';
-import routes from './routes';
 
-import Html from './utils/html.cmp';
+import { configureStore } from 'store';
+import { routes } from 'routes';
+import { Html } from 'utils';
 const manifest = require('../build/manifest.json');
 
 const express = require('express');
@@ -67,7 +65,7 @@ app.get('*', (req, res) => {
 
         loadOnServer(asyncRenderData).then(() => {
           const markup = ReactDOMServer.renderToString(
-            <Provider store={store} key="provider">
+            <Provider store={store} key='provider'>
               <ReduxAsyncConnect {...renderProps} />
             </Provider>
           );

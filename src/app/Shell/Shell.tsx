@@ -1,11 +1,11 @@
 const appConfig = require('../../../config/main');
 import * as React from 'react';
 import * as Helmet from 'react-helmet';
+import { setupPage, normalize } from 'csstips';
+import { style, cssRule } from 'typestyle';
+import { VlLogoGrey } from 'app/colors';
 import { Header } from './Header';
 import { SubHeader, SUB_HEADER_HEIGHT } from './SubHeader';
-import { style, cssRule } from 'typestyle';
-import { setupPage, normalize } from 'csstips';
-import { VlLogoGrey } from './colors';
 import { Footer, FOOTER_HEIGHT } from './Footer';
 import { SideNav } from './SideNav';
 
@@ -38,7 +38,7 @@ const mainStyle = style({
   minHeight: `calc(100vh - ${SUB_HEADER_HEIGHT + FOOTER_HEIGHT}rem)`,
 });
 
-export default class Shell extends React.Component<{}, {}> {
+export class Shell extends React.Component<{}, {}> {
   public render() {
     return (
       <section className={shellClass}>

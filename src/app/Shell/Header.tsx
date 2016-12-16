@@ -1,12 +1,12 @@
 import * as React from 'react';
-import { style, media } from 'typestyle';
-import MenuButton from './MenuButton';
-import { IToggleMenuAction } from './actions';
-import { createToggleMenuAction } from './action.creators';
 import { connect } from 'react-redux';
-import IStore from 'store';
-import Logo from './Logo';
-import { VlLogoRed } from 'app/Shell/colors';
+import { style, media } from 'typestyle';
+import { IStore } from 'store';
+import { VlLogoRed } from 'app/colors';
+import { IToggleMenuAction } from './actions';
+import { createToggleMenuAction } from './action-creators';
+import { MenuButton } from './MenuButton';
+import { Logo } from './Logo';
 
 export const HEADER_HEIGHT = 5.5;
 

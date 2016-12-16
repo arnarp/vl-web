@@ -1,7 +1,7 @@
-import IStore from '../store';
 import * as React from 'react';
 import * as Helmet from 'react-helmet';
 import { getCss } from 'typestyle';
+import { IStore } from 'store';
 
 interface IHtmlProps {
   manifest?: Object;
@@ -9,7 +9,7 @@ interface IHtmlProps {
   store: Redux.Store<IStore>;
 }
 
-export default class Html extends React.Component<IHtmlProps, {}> {
+export class Html extends React.Component<IHtmlProps, {}> {
   private resolve(files) {
     return files.map((src) => {
       if (this.props.manifest === undefined || !this.props.manifest[src]) { return; }
@@ -23,7 +23,7 @@ export default class Html extends React.Component<IHtmlProps, {}> {
 
     const styles = this.resolve(['vendor.css', 'app.css']);
     const renderStyles = styles.map((src, i) =>
-      <link key={i} rel="stylesheet" type="text/css" href={src} />
+      <link key={i} rel='stylesheet' type='text/css' href={src} />
     );
 
     const scripts = this.resolve(['vendor.js', 'app.js']);
@@ -32,7 +32,7 @@ export default class Html extends React.Component<IHtmlProps, {}> {
     );
 
     // tslint:disable-next-line:max-line-length
-    const initialState = (<script dangerouslySetInnerHTML={{ __html: `window.__INITIAL_STATE__=${JSON.stringify(store.getState())};` }} charSet="UTF-8" />);
+    const initialState = (<script dangerouslySetInnerHTML={{ __html: `window.__INITIAL_STATE__=${JSON.stringify(store.getState())};` }} charSet='UTF-8' />);
 
     return (
       <html>
@@ -42,16 +42,16 @@ export default class Html extends React.Component<IHtmlProps, {}> {
           {head.meta.toComponent()}
           {head.link.toComponent()}
           {head.script.toComponent()}
-          <link rel="stylesheet" type="text/css"
-            href="https://fonts.googleapis.com/css?family=Poppins:light,regular,medium|Playfair+Display:light" />
+          <link rel='stylesheet' type='text/css'
+            href='https://fonts.googleapis.com/css?family=Poppins:light,regular,medium|Playfair+Display:light' />
           {renderStyles}
-          <style id="css-target">
+          <style id='css-target'>
             ${getCss()}
           </style>
-          <link rel="shortcut icon" href="/favicon.ico" />
+          <link rel='shortcut icon' href='/favicon.ico' />
         </head>
         <body>
-          <main id="app" dangerouslySetInnerHTML={{ __html: markup }} />
+          <main id='app' dangerouslySetInnerHTML={{ __html: markup }} />
           {initialState}
           {renderScripts}
         </body>
