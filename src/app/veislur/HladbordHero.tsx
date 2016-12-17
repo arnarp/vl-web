@@ -28,7 +28,7 @@ const listStyle = style({
   textAlign: 'center',
 });
 
-export const SteakHero = () => (
+export const HladbordHero = () => (
   <section className={sectionStyle}>
     <h1 className={headerStyle}>Hlaðborð</h1>
     <span>Við bjóðum upp á</span>
