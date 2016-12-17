@@ -22,5 +22,22 @@ describe('Shell', () => {
       };
       expect(shellReducer(state, { type: 'unkownAction' })).to.equal(state);
     });
+
+    it('hides menu on @@router/LOCATION_CHANGE action', () => {
+      let state: IShellState = {
+        isMenuToggled: true, hasMenuBeenToggled: false,
+      };
+      let expectedState: IShellState = {
+        isMenuToggled: false, hasMenuBeenToggled: false,
+      };
+      expect(shellReducer(state, { type: '@@router/LOCATION_CHANGE'})).to.be.eql(expectedState);
+    });
+
+    it('returns same state on @@router/LOCATION_CHANGE action if menu is hidden', () => {
+      let state: IShellState = {
+        isMenuToggled: false, hasMenuBeenToggled: false,
+      };
+      expect(shellReducer(state, { type: '@@router/LOCATION_CHANGE'})).to.equal(state);
+    });
   });
 });
