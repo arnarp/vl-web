@@ -13,6 +13,8 @@ export function shellReducer(state = initialState, action: IShellAction) {
         isMenuToggled: !state.isMenuToggled,
         hasMenuBeenToggled: true,
       };
+    case '@@router/LOCATION_CHANGE':
+      return state.isMenuToggled ? {...state, isMenuToggled: false} : state;
     default:
       return state;
   }
