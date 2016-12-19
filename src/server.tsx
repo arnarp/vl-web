@@ -15,7 +15,8 @@ import { routes } from 'routes';
 import { Html } from 'utils';
 const manifest = require('../build/manifest.json');
 
-const express = require('express');
+import * as express from 'express';
+import { router } from 'server/controllers';
 const path = require('path');
 const compression = require('compression');
 const Chalk = require('chalk');
@@ -47,6 +48,7 @@ if (process.env.NODE_ENV !== 'production') {
 app.use(favicon(path.join(__dirname, '../src/favicon.ico')));
 
 app.use('/public', express.static(path.join(__dirname, '../build/public')));
+app.use('/api', router);
 
 app.get('*', (req, res) => {
   const location = req.url;
