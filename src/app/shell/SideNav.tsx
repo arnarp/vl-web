@@ -28,6 +28,7 @@ const asideStyle = style(flex, vertical, {
   transitionTimingFunction: 'ease-in-out',
   background: 'white',
   padding: '2rem',
+  zIndex: 100,
 });
 const asideVisibleStyle = style({
   right: 'calc(100vw - 25rem)',

@@ -28,6 +28,7 @@ const headerStyle = style({
   padding: '0 1rem',
   position: 'fixed',
   background: 'white',
+  zIndex: 100,
 });
 const imgStyle = style({
   height: '5rem',
