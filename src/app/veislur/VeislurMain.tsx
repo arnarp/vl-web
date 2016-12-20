@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { HladbordHero }  from './HladbordHero';
+import { SteikarhladbordHero }  from './steikarhladbord';
 
 export const VeislurMain = () => (
   <div>
-    <HladbordHero />
+    <SteikarhladbordHero />
   </div>
 );

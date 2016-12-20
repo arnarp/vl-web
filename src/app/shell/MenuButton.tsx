@@ -81,7 +81,7 @@ const spanDefaultStyle = style({
   width: '5rem',
   margin: '0 auto',
   display: 'block',
-  background: VlLogoGrey,
+  background: VlLogoGrey.toString(),
   position: 'relative',
   $nest: {
     '&:before, &:after': {
@@ -91,7 +91,7 @@ const spanDefaultStyle = style({
       left: '50%',
       width: '100%',
       height: '0.1rem',
-      background: VlLogoGrey,
+      background: VlLogoGrey.toString(),
       transition: 'transform 0.35s',
       transformOrigin: '50% 0',
     },
@@ -107,11 +107,11 @@ const toggleOnSpanStyle = style({
   background: 'transparent',
   $nest: {
     '&:before': {
-      background: VlLogoRed,
+      background: VlLogoRed.toString(),
       animation: `${spanBeforeAnimation} 0.5s forwards`,
     },
     '&:after': {
-      background: VlLogoRed,
+      background: VlLogoRed.toString(),
       animation: `${spanAfterAnimation} 0.5s forwards`,
     },
   },

@@ -16,6 +16,7 @@ cssRule('html', {
 });
 cssRule('html, button, input, optgroup, select, textarea', {
   fontFamily: '"Poppins", sans-serif',
+  fontWeight: 'lighter',
 });
 cssRule('button', {
   cursor: 'pointer',
@@ -29,6 +30,10 @@ cssRule('a', {
   color: 'inherit',
   textDecoration: 'none',
 });
+cssRule('h1', {
+  fontWeight: 'lighter',
+});
+cssRule('p', { margin: 0, fontSize: '1.6rem', maxWidth: '50rem'});
 
 const shellClass = style({
   margin: 0,

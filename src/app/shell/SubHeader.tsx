@@ -13,7 +13,7 @@ const navListStyle = style({
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'flex-end',
-  color: VlLogoGrey,
+  color: VlLogoGrey.toString(),
   $nest: {
     '&>*:hover': {
       textDecoration: 'underline',
@@ -22,16 +22,16 @@ const navListStyle = style({
 });
 const activeLinkStyle = style({
   textDecoration: 'underline',
-  color: VlLogoRed,
+  color: VlLogoRed.toString(),
   fontSize: '1.8rem',
 });
 export const SubHeader = () => (
   <nav className={navListStyle}>
-    <Link activeClassName={activeLinkStyle} to='veislur'>Veislur</Link>
-    <Link activeClassName={activeLinkStyle} to='smurbraud' className={hideAt(395)}>Smurbraud</Link>
-    <Link activeClassName={activeLinkStyle} to='tertur'>Tertur</Link>
-    <Link activeClassName={activeLinkStyle} to='smarettir'>Smáréttir</Link>
-    <Link activeClassName={activeLinkStyle} to='veislusalur' className={hideAt(460)}>Salur</Link>
-    <Link activeClassName={activeLinkStyle} to='motuneyti'>Mötuneyti</Link>
+    <Link activeClassName={activeLinkStyle} to='/veislur'>Veislur</Link>
+    <Link activeClassName={activeLinkStyle} to='/smurbraud' className={hideAt(395)}>Smurbraud</Link>
+    <Link activeClassName={activeLinkStyle} to='/tertur'>Tertur</Link>
+    <Link activeClassName={activeLinkStyle} to='/smarettir'>Smáréttir</Link>
+    <Link activeClassName={activeLinkStyle} to='/veislusalur' className={hideAt(460)}>Salur</Link>
+    <Link activeClassName={activeLinkStyle} to='/motuneyti'>Mötuneyti</Link>
   </nav>
 );

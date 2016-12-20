@@ -7,9 +7,9 @@ export const FOOTER_HEIGHT = 18;
 
 const footerStyle = style(flex, vertical, center, {
   height: `${FOOTER_HEIGHT}rem`,
-  background: VlLogoGrey.lighten(0.5),
+  background: VlLogoGrey.lighten(0.5).toString(),
   padding: '2rem 1rem',
-  color: VlLogoGrey,
+  color: VlLogoGrey.toString(),
   lineHeight: '1.5',
   fontSize: '1.2rem',
   $nest: {
@@ -17,7 +17,7 @@ const footerStyle = style(flex, vertical, center, {
       content: '""',
       height: '0.1rem',
       width: '80%',
-      background: VlLogoRed,
+      background: VlLogoRed.toString(),
       marginBottom: '2rem',
     },
   },

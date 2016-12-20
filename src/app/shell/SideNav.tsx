@@ -35,11 +35,11 @@ const asideVisibleStyle = style({
 const navStyle = style(flex, vertical, {
   lineHeight: '1.5',
   fontSize: '3rem',
-  color: VlLogoGrey,
+  color: VlLogoGrey.toString(),
   $nest: {
     '&>*:hover': {
       textDecoration: 'underline',
-      color: VlLogoGrey.darken(0.5),
+      color: VlLogoGrey.darken(0.5).toString(),
     },
   },
 });
@@ -62,13 +62,13 @@ class BaseSideNav extends React.Component<IStateProps & IDispatchProps, any> {
         <aside className={classes(asideStyle, this.props.visible && asideVisibleStyle)}>
           <nav className={navStyle}>
             <Link to='/'>Forsíða</Link>
-            <Link to='veislur'>Veislur</Link>
-            <Link to='smurbraud'>Smurbraud</Link>
-            <Link to='tertur'>Tertur</Link>
-            <Link to='smarettir'>Smáréttir</Link>
-            <Link to='veislusalur'>Salur</Link>
-            <Link to='motuneyti'>Mötuneyti</Link>
-            <Link to='about'>Um okkur</Link>
+            <Link to='/veislur'>Veislur</Link>
+            <Link to='/smurbraud'>Smurbraud</Link>
+            <Link to='/tertur'>Tertur</Link>
+            <Link to='/smarettir'>Smáréttir</Link>
+            <Link to='/veislusalur'>Salur</Link>
+            <Link to='/motuneyti'>Mötuneyti</Link>
+            <Link to='/about'>Um okkur</Link>
           </nav>
         </aside>
       </div>

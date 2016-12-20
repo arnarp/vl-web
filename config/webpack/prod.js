@@ -138,7 +138,7 @@ var config = {
       }
     }),
     new BundleAnalyzerPlugin({
-      analyzerMode: 'static',
+      analyzerMode: 'none',
       generateStatsFile: true
     })
   ]

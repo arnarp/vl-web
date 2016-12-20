@@ -8,7 +8,7 @@ const { Router, browserHistory } = require('react-router');
 import { syncHistoryWithStore } from 'react-router-redux';
 const { ReduxAsyncConnect } = require('redux-connect');
 import 'isomorphic-fetch';
-import { setCssTarget } from 'typestyle';
+import { setStylesTarget } from 'typestyle';
 import { routes } from 'routes';
 import { configureStore } from 'store';
 
@@ -32,5 +32,5 @@ ReactDOM.render(
 );
 const stylesTrgt = document.getElementById('css-target');
 if (stylesTrgt && stylesTrgt.textContent !== null) {
-  setCssTarget(stylesTrgt as any);
+  setStylesTarget(stylesTrgt as any);
 }

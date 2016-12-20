@@ -11,7 +11,7 @@ const navListStyle = style({
   display: 'flex',
   justifyContent: 'space-around',
   alignItems: 'flex-end',
-  color: VlLogoGrey,
+  color: VlLogoGrey.toString(),
   $nest: {
     '&>*:hover': {
       textDecoration: 'underline',
@@ -20,7 +20,7 @@ const navListStyle = style({
 });
 export const activeLinkStyle = style({
   textDecoration: 'underline',
-  color: VlLogoRed,
+  color: VlLogoRed.toString(),
 });
 export class SubNav extends React.Component<{}, {}> {
   public render() {

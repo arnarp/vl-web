@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as Helmet from 'react-helmet';
-import { getCss } from 'typestyle';
+import { getStyles } from 'typestyle';
 import { IStore } from 'store';
 import * as serialize from 'serialize-javascript';
 
@@ -47,7 +47,7 @@ export class Html extends React.Component<IHtmlProps, {}> {
             href='https://fonts.googleapis.com/css?family=Poppins:light,regular,medium|Playfair+Display:light' />
           {renderStyles}
           <style id='css-target'>
-            ${getCss()}
+            ${getStyles()}
           </style>
           <link rel='shortcut icon' href='/favicon.ico' />
         </head>

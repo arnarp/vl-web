@@ -35,7 +35,7 @@ const imgStyle = style({
 const phoneNumberStyle = style({
   fontSize: '3rem',
   fontFamily: 'Playfair Display',
-  color: VlLogoRed,
+  color: VlLogoRed.toString(),
   fontWeight: 'lighter',
   display: 'flex',
   alignItems: 'flex-end',

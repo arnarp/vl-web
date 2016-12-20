@@ -1,13 +1,11 @@
 import * as React from 'react';
 import { IndexRoute, Route } from 'react-router';
-import { VeislurMain, VeislurMaster } from '.';
-import { HladbordMain, HladbordMaster } from './hladbord';
+import { VeislurMain } from '.';
+import { Steikarhladbord } from './steikarhladbord';
 
 export const VeislurRoute = (
-  <Route path='veislur' component={VeislurMaster}>
+  <Route path='veislur'>
       <IndexRoute component={VeislurMain} />
-      <Route path='hladbord' component={HladbordMaster}>
-        <IndexRoute component={HladbordMain} />
-      </Route>
+      <Route path='steikarhladbord' component={Steikarhladbord} />
   </Route>
 );
