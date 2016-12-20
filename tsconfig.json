@@ -10,7 +10,9 @@
     "jsx": "react",
     "moduleResolution": "node",
     "strictNullChecks": true,
-    "baseUrl": "./src"
+    "baseUrl": "./src",
+    "noEmitHelpers": true,
+    "importHelpers": true
   },
   "exclude": [
     "node_modules",

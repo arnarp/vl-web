@@ -5,6 +5,7 @@ var postcssNext = require('postcss-cssnext');
 var stylelint = require('stylelint');
 var ManifestPlugin = require('webpack-manifest-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 var config = {
   bail: true,
@@ -27,7 +28,10 @@ var config = {
       'react-router-redux',
       'redux',
       'redux-connect',
-      'redux-thunk'
+      'redux-thunk',
+      'typestyle',
+      'csstips',
+      'es6-promise',
     ]
   },
 
@@ -38,6 +42,7 @@ var config = {
   },
 
   module: {
+    noParse: /redux-logger/,
     preLoaders: [
       {
         test: /\.tsx?$/,
@@ -131,6 +136,10 @@ var config = {
         BROWSER: JSON.stringify(true),
         NODE_ENV: JSON.stringify('production')
       }
+    }),
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+      generateStatsFile: true
     })
   ]
 };
