@@ -39,21 +39,10 @@ var config = {
         loader: 'json-loader'
       },
       {
-        test: /\.jsx$/,
-        loader: 'babel?presets[]=es2015'
-      },
-      {
         test: /\.tsx?$/,
         loader: 'ts-loader',
         exclude: /node_modules/
       },
-      {
-        test: /\.css$/,
-        loaders: [
-          'isomorphic-style-loader',
-          'css-loader?modules&importLoaders=2&sourceMap&localIdentName=[local]___[hash:base64:5]'
-        ]
-      }
     ]
   },
 

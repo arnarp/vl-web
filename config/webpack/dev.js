@@ -1,8 +1,5 @@
 var path = require('path');
 var webpack = require('webpack');
-var postcssAssets = require('postcss-assets');
-var postcssNext = require('postcss-cssnext');
-var stylelint = require('stylelint');
 var ManifestPlugin = require('webpack-manifest-plugin');
 
 var config = {
@@ -21,7 +18,6 @@ var config = {
     app: [
       'webpack-hot-middleware/client?reload=true',
       './src/client.tsx',
-      './src/vendor/main.ts'
     ]
   },
 
@@ -45,33 +41,8 @@ var config = {
         loader: 'react-hot!ts'
       },
       {
-        test: /\.jsx$/,
-        loader: 'babel?presets[]=es2015'
-      },
-      {
         test: /\.json$/,
         loader: 'json-loader'
-      },
-      {
-        test: /\.css$/,
-        include: path.resolve('./src/app'),
-        loaders: [
-          'style-loader',
-          'css-loader?modules&importLoaders=2&sourceMap&localIdentName=[local]___[hash:base64:5]',
-          'postcss-loader'
-        ]
-      },
-      {
-        test: /\.css$/,
-        exclude: path.resolve('./src/app'),
-        loaders: [
-          'style-loader',
-          'css-loader'
-        ]
-      },
-      {
-        test: /\.eot(\?.*)?$/,
-        loader: 'file?name=fonts/[hash].[ext]'
       },
       {
         test: /\.(woff|woff2)(\?.*)?$/,
@@ -90,13 +61,6 @@ var config = {
         loader: 'url?limit=1000&name=images/[hash].[ext]'
       }
     ]
-  },
-  postcss: function () {
-    return [
-      stylelint({ files: '../../src/app/*.css' }),
-      postcssNext(),
-      postcssAssets({ relative: true })
-    ];
   },
 
   tslint: {

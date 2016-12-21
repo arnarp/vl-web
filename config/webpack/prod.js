@@ -1,8 +1,5 @@
 var path = require('path');
 var webpack = require('webpack');
-var postcssAssets = require('postcss-assets');
-var postcssNext = require('postcss-cssnext');
-var stylelint = require('stylelint');
 var ManifestPlugin = require('webpack-manifest-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
@@ -19,7 +16,6 @@ var config = {
   entry: {
     app: './src/client.tsx',
     vendor: [
-      './src/vendor/main.ts',
       'react',
       'react-dom',
       'react-router',
@@ -55,33 +51,8 @@ var config = {
         loader: 'ts-loader'
       },
       {
-        test: /\.jsx$/,
-        loader: 'babel?presets[]=es2015'
-      },
-      {
         test: /\.json$/,
         loader: 'json-loader'
-      },
-      {
-        test: /\.css$/,
-        include: path.resolve('./src/app'),
-        loader: ExtractTextPlugin.extract(
-          'style-loader',
-          'css-loader?modules&importLoaders=2&sourceMap&localIdentName=[local]___[hash:base64:5]',
-          'postcss-loader'
-        )
-      },
-      {
-        test: /\.css$/,
-        exclude: path.resolve('./src/app'),
-        loader: ExtractTextPlugin.extract(
-          'style-loader',
-          'css-loader'
-        )
-      },
-      {
-        test: /\.eot(\?.*)?$/,
-        loader: 'file?name=fonts/[hash].[ext]'
       },
       {
         test: /\.(woff|woff2)(\?.*)?$/,
@@ -102,14 +73,6 @@ var config = {
     ]
   },
 
-  postcss: function () {
-    return [
-      stylelint({ files: '../../src/app/*.css' }),
-      postcssNext(),
-      postcssAssets({ relative: true })
-    ];
-  },
-
   tslint: {
     failOnHint: true
   },
@@ -127,7 +90,6 @@ var config = {
         warnings: false
       }
     }),
-    new ExtractTextPlugin('css/[name].[hash].css'),
     new ManifestPlugin({
       fileName: '../manifest.json'
     }),
