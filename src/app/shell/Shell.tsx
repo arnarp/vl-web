@@ -17,6 +17,7 @@ cssRule('html', {
 cssRule('html, button, input, optgroup, select, textarea', {
   fontFamily: '"Poppins", sans-serif',
   fontWeight: 'lighter',
+  color: VlLogoGrey.toString(),
 });
 cssRule('button', {
   cursor: 'pointer',
@@ -30,8 +31,9 @@ cssRule('a', {
   color: 'inherit',
   textDecoration: 'none',
 });
-cssRule('h1', {
+cssRule('h1, h2', {
   fontWeight: 'lighter',
+  margin: 0,
 });
 cssRule('p', { margin: 0, fontSize: '1.6rem', maxWidth: '50rem'});
 

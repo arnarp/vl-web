@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { Hero } from 'components/Hero';
+import { Hero } from 'components';
 
-export const Kaffihlaðbord = () => (
+export const KaffihlaðbordHero = () => (
   <Hero linkTo='/veislur/kaffihladbord'
     header='Kaffihlaðborð'
     paragraph='Við bjóðum upp á kaffihlaðborð fyrir öll tilefni'

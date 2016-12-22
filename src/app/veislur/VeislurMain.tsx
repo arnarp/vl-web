@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { SteikarhladbordHero }  from './steikarhladbord';
-import { Kaffihlaðbord } from './kaffihladbord';
+import { KaffihlaðbordHero } from './kaffihladbord';
 
 export const VeislurMain = () => (
   <div>
     <SteikarhladbordHero />
-    <Kaffihlaðbord />
+    <KaffihlaðbordHero />
   </div>
 );

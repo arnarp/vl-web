@@ -1,1 +1,1 @@
-export { Kaffihlaðbord } from './Kaffihladbord';
+export { KaffihlaðbordHero } from './KaffihladbordHero';

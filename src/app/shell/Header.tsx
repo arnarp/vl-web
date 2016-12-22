@@ -24,7 +24,7 @@ const rightStyle = style({
 const headerStyle = style({
   display: 'flex',
   height: `${HEADER_HEIGHT}rem`,
-  width: '100%',
+  width: '100vw',
   padding: '0 1rem',
   position: 'fixed',
   background: 'white',

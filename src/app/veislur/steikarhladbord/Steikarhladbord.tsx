@@ -1,47 +1,48 @@
 import * as React from 'react';
-import { style } from 'typestyle';
-import { flex, vertical, endJustified } from 'csstips';
-import { VlLogoGrey } from 'app/colors';
+import { style } from 'typestyle';
+import { vertical } from 'csstips';
+import { HeaderImage, HorizontalDivider } from 'components';
+import { SteikarHladbordItem } from './SteikarHladbordItem';
 
-const mainStyle = style(flex, vertical, {
+const steak1Paragraphs = [
+  'Ylvolgt nýbakað snittubrauð, borið fram með smjöri og pestó',
+  `Steikt hunangsgljáð lambalæri með ferskum kryddjurtum
+  Hunangsgljáðar kalkúnabringur
+  Purusteik`,
+  // tslint:disable-next-line:max-line-length
+  'Ristað ferskt grænmeti, steikar kartöflur, gratíneraðar kartöflur, ferskt salat, eplasalati, rjómasósa og sveppasósa',
+];
+const steak2Paragraphs = [
+  `Ylvolgt nýbakað snittubrauð, borið fram með smjöri og pestó`,
+  `Eldsteikt nautafille með ferskum kryddjurtum
+  Ristað kryddlegið lambalæri
+  Smjörgljáðar kalkúnabringur
+  Purusteik
+  Gratíneraður skötusels Terrine`,
+  `Ristað ferskt grænmeti, steikar kartöflur, gratíneraðar kartöflur,
+  eplasalati, rjómalöguð sveppasósa, púrtvínsbætt piparsósa.
+  Salatfat með fersku grænmeti og ávöxtum`,
+];
 
-});
-
-const imgDivStyle = style(flex, vertical, endJustified, {
-  backgroundImage: 'url(https://s3-eu-west-1.amazonaws.com/vl-web/images/_Q1A1208_900.jpg)',
-  backgroundRepeat: 'no-repeat',
-  backgroundPosition: '-20rem -5rem',
-  height: '50vh',
-});
-
-const hStyle = style({
-  background: 'white',
-  color: VlLogoGrey.toString(),
-  textAlign: 'center',
-  mixBlendMode: 'screen',
-  fontSize: '6rem',
-  width: '100%',
-  margin: 0,
-  padding: '2rem',
-  position: 'relative',
-  top: '0.1rem',
-  fontWeight: 'normal',
-  textDecoration: 'underline',
-});
-
-const divStyle = style({
-  minHeight: '8rem',
-  padding: '1rem',
-  fontSize: '1.6rem',
-});
+// tslint:disable:max-line-length
+const containerStyle = style(vertical, {});
 
 export const Steikarhladbord = () => (
-  <div className={mainStyle}>
-    <div className={imgDivStyle}>
-      <h1 className={hStyle}>Kaffihlaðborð</h1>
-    </div>
-    <div className={divStyle}>
-      <p>Við bjóðum upp á kaffihlaðborð fyrir öll tilefni</p>
-    </div>
+  <div className={containerStyle}>
+    <HeaderImage
+      header='Steikarhladborð'
+      imgUrl='https://s3-eu-west-1.amazonaws.com/vl-web/images/steikur_pura_900.jpg'
+      />
+    <SteikarHladbordItem
+      header='Steikarhlaðborð 1'
+      id='52100'
+      paragraphs={steak1Paragraphs}
+      price={5178}/>
+    <HorizontalDivider />
+    <SteikarHladbordItem
+      header='Steikarhlaðborð 2'
+      id='52120'
+      paragraphs={steak2Paragraphs}
+      price={6283}/>
   </div>
 );
