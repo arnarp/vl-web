@@ -28,6 +28,9 @@
     ],
     "jsx-alignment": [
       false
+    ],
+    "triple-equals": [
+      false
     ]
   }
 }

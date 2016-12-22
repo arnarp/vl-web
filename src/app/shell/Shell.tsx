@@ -31,10 +31,12 @@ cssRule('a', {
   color: 'inherit',
   textDecoration: 'none',
 });
-cssRule('h1, h2', {
+cssRule('h1, h2, h3', {
   fontWeight: 'lighter',
   margin: 0,
 });
+cssRule('h2', { fontSize: '2.9rem'});
+cssRule('h3', { fontSize: '2rem'});
 cssRule('p', { margin: 0, fontSize: '1.6rem', maxWidth: '50rem'});
 
 const shellClass = style({
