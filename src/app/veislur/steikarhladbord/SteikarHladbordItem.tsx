@@ -18,7 +18,7 @@ const priceStyle = style({
   alignSelf: 'flex-end',
   $nest: {
     span: {
-      fontSize: '3rem',
+      fontSize: '2.5rem',
     },
   },
 });

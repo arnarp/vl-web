@@ -37,7 +37,12 @@ cssRule('h1, h2, h3', {
 });
 cssRule('h2', { fontSize: '2.9rem'});
 cssRule('h3', { fontSize: '2rem'});
-cssRule('p', { margin: 0, fontSize: '1.6rem', maxWidth: '50rem'});
+cssRule('p', {
+  margin: 0,
+  fontSize: '1.6rem',
+  lineHeight: '1.4',
+  maxWidth: '50rem',
+});
 
 const shellClass = style({
   margin: 0,

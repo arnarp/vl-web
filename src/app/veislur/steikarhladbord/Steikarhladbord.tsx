@@ -33,6 +33,14 @@ const containerStyle = style(vertical, {});
 const extraInfoStyle = style({
   padding: '1rem 4rem',
 });
+const priceStyle = style({
+  alignSelf: 'flex-end',
+  $nest: {
+    span: {
+      fontSize: '2.5rem',
+    },
+  },
+});
 
 export const Steikarhladbord = () => (
   <div className={containerStyle}>
@@ -51,6 +59,14 @@ export const Steikarhladbord = () => (
       id='52120'
       paragraphs={steak2Paragraphs}
       price={6283}/>
+    <HorizontalDivider />
+    <div className={style(vertical, { padding: '1rem 8rem' })}>
+      <h3>Einnig er hægt að bæta við hlaðborðin</h3>
+      <p className={style({ paddingTop: '1rem' })}>Humarsúpa með brauði</p>
+      <p className={priceStyle}>Verð á mann <span>850 kr</span></p>
+      <p className={style({ paddingTop: '1rem' })}>Desert að eigin vali af desertseðli</p>
+      <p className={priceStyle}>Verð á mann <span>800 kr</span></p>
+    </div>
     <HorizontalDivider />
     <div className={extraInfoStyle}>
       <p>
