@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Link } from 'react-router';
-import { style } from 'typestyle';
+import { style, media } from 'typestyle';
 import { hideAt } from 'utils/style';
 import { VlLogoRed, VlLogoGrey } from 'app/colors';
 
@@ -19,7 +19,9 @@ const navListStyle = style({
       textDecoration: 'underline',
     },
   },
-});
+},
+  media({type: 'print'}, { display: 'none'})
+);
 const activeLinkStyle = style({
   textDecoration: 'underline',
   color: VlLogoRed.toString(),

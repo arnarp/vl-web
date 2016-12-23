@@ -4,6 +4,7 @@ import { style, classes } from 'typestyle';
 import { flex, vertical, horizontal, endJustified, center } from 'csstips';
 import { VlLogoGrey } from 'app/colors';
 import { AngleRight } from 'icons';
+import { H1 } from 'components';
 
 interface IHeroProps {
   linkTo: string;
@@ -27,18 +28,13 @@ export const Hero = (props: IHeroProps) => {
     fontWeight: 'lighter',
   });
   const headerStyle = style({
-    fontWeight: 'lighter',
     fontSize: '5rem',
-    textAlign: 'center',
     background: 'white',
     color: VlLogoGrey.toString(),
     mixBlendMode: 'screen',
     position: 'relative',
-    margin: 0,
     top: '0.1rem',
     textDecoration: 'underline',
-    width: '100%',
-    padding: '2rem',
   });
   const paragraphStyle = style({
     color: VlLogoGrey.toString(),
@@ -55,7 +51,7 @@ export const Hero = (props: IHeroProps) => {
   return (
     <Link className={linkStyle} to={props.linkTo}>
       <div className={imgStyle}>
-        <h1 className={headerStyle}>{props.header}</h1>
+        <H1 className={headerStyle}>{props.header}</H1>
       </div>
       <p className={paragraphStyle}>{props.paragraph}</p>
       <p className={classes(nanarPStyle, paragraphStyle)}>

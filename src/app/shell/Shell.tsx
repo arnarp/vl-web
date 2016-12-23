@@ -31,11 +31,10 @@ cssRule('a', {
   color: 'inherit',
   textDecoration: 'none',
 });
-cssRule('h1, h2, h3', {
+cssRule('h3', {
   fontWeight: 'lighter',
   margin: 0,
 });
-cssRule('h2', { fontSize: '2.9rem'});
 cssRule('h3', { fontSize: '2rem'});
 cssRule('p', {
   margin: 0,

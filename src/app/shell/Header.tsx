@@ -2,10 +2,10 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { style, media } from 'typestyle';
 import { IStore } from 'store';
-import { VlLogoRed } from 'app/colors';
+import { VlLogoRed } from 'app/colors';
 import { IToggleMenuAction } from './actions';
 import { createToggleMenuAction } from './action-creators';
-import { MenuButton } from './MenuButton';
+import { MenuButton } from './MenuButton';
 import { Logo } from './Logo';
 
 export const HEADER_HEIGHT = 5.5;
@@ -13,25 +13,35 @@ export const HEADER_HEIGHT = 5.5;
 const leftStyle = style({
   width: '15%',
   minWidth: '5.5rem',
-}, media({ maxWidth: 400 }, { width: '20%'}));
+},
+  media({ type: 'print' }, { display: 'none' }),
+  media({ maxWidth: 400 }, { width: '20%' }),
+);
 const centerStyle = style({
   width: '70%',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'flex-end',
-}, media({minWidth: 0, maxWidth: 400}, {width: '80%'}));
+},
+  media({ type: 'print'}, { width: '100%'}),
+  media({ minWidth: 0, maxWidth: 400 }, { width: '80%' })
+);
 const rightStyle = style({
   width: '15%',
-}, media({minWidth: 0, maxWidth: 400}, {display: 'none'}));
+},
+  media({ type: 'print' }, { display: 'none' }),
+  media({ minWidth: 0, maxWidth: 400 }, { display: 'none' }),
+);
 const headerStyle = style({
   display: 'flex',
   height: `${HEADER_HEIGHT}rem`,
   width: '100vw',
   padding: '0 1rem',
-  position: 'fixed',
   background: 'white',
   zIndex: 100,
-});
+},
+  media({type: 'screen'}, { position: 'fixed'})
+);
 const imgStyle = style({
   height: '5rem',
 });
@@ -43,7 +53,10 @@ const phoneNumberStyle = style({
   display: 'flex',
   alignItems: 'flex-end',
   lineHeight: 0.8,
-}, media({maxWidth: 400}, { fontSize: '2rem'}));
+},
+  media({ type: 'print' }, { display: 'none' }),
+  media({ maxWidth: 400 }, { fontSize: '2rem' })
+);
 
 interface IStateProps {
   isMenuToggled: boolean;

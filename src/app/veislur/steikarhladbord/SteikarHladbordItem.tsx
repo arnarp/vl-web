@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { style, classes, media } from 'typestyle';
 import { vertical } from 'csstips';
+import { H2 } from 'components';
 
 const itemContainerStyle = style(vertical,
   media({ minWidth: 0, maxWidth: 619 }, {
@@ -10,11 +11,7 @@ const itemContainerStyle = style(vertical,
     width: '50rem',
   })
 );
-const itemHeaderStyle = style({
-  fontSize: '2.9rem',
-  fontWeight: 'lighter',
-  textAlign: 'center',
-}, media({ maxWidth: 367 }, { fontSize: '2.2rem' }));
+const itemHeaderStyle = style(media({ maxWidth: 367 }, { fontSize: '2.2rem' }));
 const itemIdStyle = style({
   alignSelf: 'center',
 });
@@ -51,7 +48,7 @@ export const SteikarHladbordItem = (props: ISteikarHladbordItemProps) => {
   });
   return (
     <div className={itemContainerStyle}>
-      <h2 className={itemHeaderStyle}>{props.header}</h2>
+      <H2 className={itemHeaderStyle}>{props.header}</H2>
       <span className={itemIdStyle}>Vörunúmer {props.id}</span>
       {paragraphs}
       <p className={classes(priceStyle, paddingTop)}>Verð á mann <span>{props.price} kr</span></p>
