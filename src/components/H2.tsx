@@ -14,7 +14,7 @@ const defaultStyle = style({
 );
 
 export const H2 = (props: {className?: string, children?: any}) => (
-  <h1 className={classes(defaultStyle, props.className)}>
+  <h2 className={classes(defaultStyle, props.className)}>
     {props.children}
-  </h1>
+  </h2>
 );

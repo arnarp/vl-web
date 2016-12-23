@@ -19,6 +19,13 @@ cssRule('html, button, input, optgroup, select, textarea', {
   fontWeight: 'lighter',
   color: VlLogoGrey.toString(),
 });
+cssRule('@media print', {
+  $nest: {
+    html: {
+      color: VlLogoGrey.darken(0.2).toString(),
+    },
+  },
+});
 cssRule('button', {
   cursor: 'pointer',
   background: 'transparent',
@@ -30,17 +37,6 @@ cssRule('button', {
 cssRule('a', {
   color: 'inherit',
   textDecoration: 'none',
-});
-cssRule('h3', {
-  fontWeight: 'lighter',
-  margin: 0,
-});
-cssRule('h3', { fontSize: '2rem'});
-cssRule('p', {
-  margin: 0,
-  fontSize: '1.6rem',
-  lineHeight: '1.4',
-  maxWidth: '50rem',
 });
 
 const shellClass = style({

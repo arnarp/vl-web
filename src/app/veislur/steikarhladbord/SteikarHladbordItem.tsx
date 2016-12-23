@@ -1,14 +1,19 @@
 import * as React from 'react';
 import { style, classes, media } from 'typestyle';
 import { vertical } from 'csstips';
-import { H2 } from 'components';
+import { H2, P }  from 'components';
 
-const itemContainerStyle = style(vertical,
+export const itemContainerStyle = style(vertical,
   media({ minWidth: 0, maxWidth: 619 }, {
+    width: '100%',
     padding: '1rem 6rem',
   }), media({ minWidth: 620 }, {
-    padding: '1rem 0rem',
     width: '50rem',
+    padding: '1rem 0rem',
+  }), media({ type: 'print'}, {
+    width: '50rem',
+    padding: '1rem 0rem',
+    textAlign: 'justify',
   })
 );
 const itemHeaderStyle = style(media({ maxWidth: 367 }, { fontSize: '2.2rem' }));
@@ -16,32 +21,28 @@ const itemIdStyle = style({
   alignSelf: 'center',
 });
 const paddingTop = style({ paddingTop: '1rem' });
-const priceStyle = style({
-  alignSelf: 'flex-end',
-  $nest: {
-    span: {
-      fontSize: '2.5rem',
-    },
-  },
-});
+export const priceStyle = style({ alignSelf: 'flex-end' });
+export const priceAmountStyle = style({
+  fontSize: '2.5rem',
+}, media({ type: 'print' }, { fontSize: '2rem' }));
 
 interface ISteikarHladbordItemProps {
   header: string;
   id: string;
-  paragraphs: Array<string |  string[]>;
+  paragraphs: Array<string | string[]>;
   price: number;
 }
 
 export const SteikarHladbordItem = (props: ISteikarHladbordItemProps) => {
   const paragraphs = props.paragraphs.map((p, outerIndex) => {
     if (typeof p === 'string') {
-      return <p className={paddingTop} key={outerIndex}>{p}</p>;
+      return <P className={paddingTop} key={outerIndex}>{p}</P>;
     } else {
       return p.map((val, innerIndex) => {
         if (innerIndex == 0) {
-          return <p className={paddingTop} key={outerIndex + ' ' + innerIndex}>{val}</p>;
+          return <P className={paddingTop} key={outerIndex + ' ' + innerIndex}>{val}</P>;
         } else {
-          return <p key={outerIndex + ' ' + innerIndex}>{val}</p>;
+          return <P key={outerIndex + ' ' + innerIndex}>{val}</P>;
         }
       });
     }
@@ -51,7 +52,9 @@ export const SteikarHladbordItem = (props: ISteikarHladbordItemProps) => {
       <H2 className={itemHeaderStyle}>{props.header}</H2>
       <span className={itemIdStyle}>Vörunúmer {props.id}</span>
       {paragraphs}
-      <p className={classes(priceStyle, paddingTop)}>Verð á mann <span>{props.price} kr</span></p>
+      <P className={classes(priceStyle, paddingTop)}>
+        Verð á mann <span className={priceAmountStyle}>{props.price} kr</span>
+      </P>
     </div>
   );
 };

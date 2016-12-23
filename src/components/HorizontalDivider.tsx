@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { style } from 'typestyle';
+import { style, classes } from 'typestyle';
 import { VlLogoRed } from 'app/colors';
 
 const dividerStyle = style({
@@ -10,4 +10,6 @@ const dividerStyle = style({
   width: '80%',
 });
 
-export const HorizontalDivider = () => <div className={dividerStyle} />;
+export const HorizontalDivider = (props: {className?: string}) => (
+  <div className={classes(dividerStyle, props.className)} />
+);

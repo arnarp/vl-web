@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { style } from 'typestyle';
 import { OutlineBtn } from 'components/buttons';
+import { P } from 'components';
 
 const divStyle = style({
   height: 'calc(100vh - 21rem)',
@@ -21,7 +22,7 @@ const pStyle = style({
 
 export const PinnNo5Hero = () => (
   <div className={divStyle}>
-    <p className={pStyle}>Pinnaborð</p>
+    <P className={pStyle}>Pinnaborð</P>
     <OutlineBtn>Sjá nánar</OutlineBtn>
   </div>
 );

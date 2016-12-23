@@ -4,7 +4,7 @@ import { style, classes } from 'typestyle';
 import { flex, vertical, horizontal, endJustified, center } from 'csstips';
 import { VlLogoGrey } from 'app/colors';
 import { AngleRight } from 'icons';
-import { H1 } from 'components';
+import { H1, P } from 'components';
 
 interface IHeroProps {
   linkTo: string;
@@ -53,10 +53,10 @@ export const Hero = (props: IHeroProps) => {
       <div className={imgStyle}>
         <H1 className={headerStyle}>{props.header}</H1>
       </div>
-      <p className={paragraphStyle}>{props.paragraph}</p>
-      <p className={classes(nanarPStyle, paragraphStyle)}>
+      <P className={paragraphStyle}>{props.paragraph}</P>
+      <P className={classes(nanarPStyle, paragraphStyle)}>
         Skoða nánar <AngleRight stroke={VlLogoGrey.toString()} className={iconStyle} />
-      </p>
+      </P>
     </Link>
   );
 };

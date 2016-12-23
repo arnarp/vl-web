@@ -23,7 +23,7 @@ const centerStyle = style({
   justifyContent: 'center',
   alignItems: 'flex-end',
 },
-  media({ type: 'print'}, { width: '100%'}),
+  media({ type: 'print' }, { width: '100%' }),
   media({ minWidth: 0, maxWidth: 400 }, { width: '80%' })
 );
 const rightStyle = style({
@@ -40,7 +40,8 @@ const headerStyle = style({
   background: 'white',
   zIndex: 100,
 },
-  media({type: 'screen'}, { position: 'fixed'})
+  media({ type: 'print' }, { height: '5rem' }),
+  media({ type: 'screen' }, { position: 'fixed' })
 );
 const imgStyle = style({
   height: '5rem',
