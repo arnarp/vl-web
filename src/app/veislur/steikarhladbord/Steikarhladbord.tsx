@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { style } from 'typestyle';
-import { vertical } from 'csstips';
+import { style, media } from 'typestyle';
+import { vertical, center } from 'csstips';
 import { HeaderImage, HorizontalDivider } from 'components';
 import { SteikarHladbordItem } from './SteikarHladbordItem';
 
@@ -29,7 +29,7 @@ const steak2Paragraphs = [
 ];
 
 // tslint:disable:max-line-length
-const containerStyle = style(vertical, {});
+const containerStyle = style(vertical, center);
 const extraInfoStyle = style({
   paddingTop: '1rem',
   paddingBottom: '2rem',
@@ -45,13 +45,23 @@ const priceStyle = style({
   },
 });
 const paddingTopSm = style({ paddingTop: '1rem' });
-
+const imgStyle = style(media({minWidth: 695}, {
+  backgroundPosition: '0rem -5rem !important',
+}));
+const addonsStyle = style(vertical,
+  media({ minWidth: 0, maxWidth: 619 }, {
+    padding: '1rem 6rem',
+  }), media({ minWidth: 620 }, {
+    padding: '1rem 0rem',
+    width: '50rem',
+  })
+);
 export const Steikarhladbord = () => (
   <div className={containerStyle}>
     <HeaderImage
       header='Steikarhlaðborð'
       imgUrl='https://s3-eu-west-1.amazonaws.com/vl-web/images/steikur_pura_900.jpg'
-      />
+      imgStyle={imgStyle}/>
     <SteikarHladbordItem
       header='Steikarhlaðborð 1'
       id='52100'
@@ -64,7 +74,7 @@ export const Steikarhladbord = () => (
       paragraphs={steak2Paragraphs}
       price={6283}/>
     <HorizontalDivider />
-    <div className={style(vertical, { padding: '1rem 6rem' })}>
+    <div className={addonsStyle}>
       <h3>Einnig er hægt að bæta við hlaðborðin</h3>
       <p className={style({ paddingTop: '1rem' })}>Humarsúpa með brauði</p>
       <p className={priceStyle}>Verð á mann <span>850 kr</span></p>

@@ -2,14 +2,19 @@ import * as React from 'react';
 import { style, classes, media } from 'typestyle';
 import { vertical } from 'csstips';
 
-const itemContainerStyle = style(vertical, {
-  padding: '1rem 6rem',
-});
+const itemContainerStyle = style(vertical,
+  media({ minWidth: 0, maxWidth: 619 }, {
+    padding: '1rem 6rem',
+  }), media({ minWidth: 620 }, {
+    padding: '1rem 0rem',
+    width: '50rem',
+  })
+);
 const itemHeaderStyle = style({
   fontSize: '2.9rem',
   fontWeight: 'lighter',
   textAlign: 'center',
-}, media({maxWidth: 367}, { fontSize: '2.2rem'}));
+}, media({ maxWidth: 367 }, { fontSize: '2.2rem' }));
 const itemIdStyle = style({
   alignSelf: 'center',
 });
@@ -26,7 +31,7 @@ const priceStyle = style({
 interface ISteikarHladbordItemProps {
   header: string;
   id: string;
-  paragraphs: Array<string | string[]>;
+  paragraphs: Array<string |  string[]>;
   price: number;
 }
 

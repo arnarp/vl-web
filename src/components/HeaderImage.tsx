@@ -15,6 +15,7 @@ export const HeaderImage = (props: IHeaderImagesProps) => {
     backgroundRepeat: 'no-repeat',
     backgroundPosition: '-20rem -5rem',
     height: '50vh',
+    width: '100%',
   });
   const headerStyle = style({
     background: 'white',
