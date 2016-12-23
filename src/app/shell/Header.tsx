@@ -12,12 +12,14 @@ export const HEADER_HEIGHT = 5.5;
 
 const leftStyle = style({
   width: '15%',
-});
+  minWidth: '5.5rem',
+}, media({ maxWidth: 400 }, { width: '20%'}));
 const centerStyle = style({
   width: '70%',
   display: 'flex',
   justifyContent: 'center',
-}, media({minWidth: 0, maxWidth: 400}, {width: '85%'}));
+  alignItems: 'flex-end',
+}, media({minWidth: 0, maxWidth: 400}, {width: '80%'}));
 const rightStyle = style({
   width: '15%',
 }, media({minWidth: 0, maxWidth: 400}, {display: 'none'}));
@@ -40,7 +42,8 @@ const phoneNumberStyle = style({
   fontWeight: 'lighter',
   display: 'flex',
   alignItems: 'flex-end',
-});
+  lineHeight: 0.8,
+}, media({maxWidth: 400}, { fontSize: '2rem'}));
 
 interface IStateProps {
   isMenuToggled: boolean;

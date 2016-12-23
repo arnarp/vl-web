@@ -31,7 +31,10 @@ const steak2Paragraphs = [
 // tslint:disable:max-line-length
 const containerStyle = style(vertical, {});
 const extraInfoStyle = style({
-  padding: '1rem 4rem',
+  paddingTop: '1rem',
+  paddingBottom: '2rem',
+  maxWidth: '80vw',
+  alignSelf: 'center',
 });
 const priceStyle = style({
   alignSelf: 'flex-end',
@@ -41,6 +44,7 @@ const priceStyle = style({
     },
   },
 });
+const paddingTopSm = style({ paddingTop: '1rem' });
 
 export const Steikarhladbord = () => (
   <div className={containerStyle}>
@@ -60,11 +64,11 @@ export const Steikarhladbord = () => (
       paragraphs={steak2Paragraphs}
       price={6283}/>
     <HorizontalDivider />
-    <div className={style(vertical, { padding: '1rem 8rem' })}>
+    <div className={style(vertical, { padding: '1rem 6rem' })}>
       <h3>Einnig er hægt að bæta við hlaðborðin</h3>
       <p className={style({ paddingTop: '1rem' })}>Humarsúpa með brauði</p>
       <p className={priceStyle}>Verð á mann <span>850 kr</span></p>
-      <p className={style({ paddingTop: '1rem' })}>Desert að eigin vali af desertseðli</p>
+      <p className={paddingTopSm}>Desert að eigin vali af desertseðli</p>
       <p className={priceStyle}>Verð á mann <span>800 kr</span></p>
     </div>
     <HorizontalDivider />
@@ -80,7 +84,7 @@ export const Steikarhladbord = () => (
         innifalið í þessu verði er uppsetning á salnum, dúkar á borð,
         borðbúnaður og þrif, þjónusta er ekki innifalinn.
       </p>
-      <p>
+      <p className={paddingTopSm}>
         Þjónustugjaldið stjórnast af stærð veislu og því þjónustustigi sem þarf við veisluna,
         verð á hvern þjón er 5.500 kr á klukkutíma.  Lágmarkstími fyrir þjón eru 4 tímar.
       </p>

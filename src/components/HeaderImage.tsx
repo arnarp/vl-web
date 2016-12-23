@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { style, classes }  from 'typestyle';
+import { style, classes, media }  from 'typestyle';
 import { flex, vertical, endJustified }  from 'csstips';
 
 interface IHeaderImagesProps {
@@ -28,7 +28,7 @@ export const HeaderImage = (props: IHeaderImagesProps) => {
     top: '0.1rem',
     fontWeight: 'normal',
     textDecoration: 'underline',
-  });
+  }, media({maxWidth: 355}, { fontSize: '3rem'}));
   return (
     <div className={classes(imgStyle, props.imgStyle)}>
       <h1 className={classes(headerStyle, props.headerStyle)}>{props.header}</h1>

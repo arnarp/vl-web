@@ -1,15 +1,15 @@
 import * as React from 'react';
-import { style, classes } from 'typestyle';
+import { style, classes, media } from 'typestyle';
 import { vertical } from 'csstips';
 
 const itemContainerStyle = style(vertical, {
-  padding: '1rem 8rem',
+  padding: '1rem 6rem',
 });
 const itemHeaderStyle = style({
   fontSize: '2.9rem',
   fontWeight: 'lighter',
   textAlign: 'center',
-});
+}, media({maxWidth: 367}, { fontSize: '2.2rem'}));
 const itemIdStyle = style({
   alignSelf: 'center',
 });
