@@ -2,7 +2,6 @@ var path = require('path');
 var webpack = require('webpack');
 var ManifestPlugin = require('webpack-manifest-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 var config = {
   bail: true,
@@ -98,10 +97,6 @@ var config = {
         BROWSER: JSON.stringify(true),
         NODE_ENV: JSON.stringify('production')
       }
-    }),
-    new BundleAnalyzerPlugin({
-      analyzerMode: 'none',
-      generateStatsFile: true
     })
   ]
 };

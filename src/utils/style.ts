@@ -1,4 +1,4 @@
-import { style, media } from 'typestyle';
+import { media } from 'typestyle';
 
-export const hideAt = (width: number) => style(media({ maxWidth: width }, { display: 'none' }));
+export const hideAtRange = (from: number, to?: number) => media({ minWidth: from, maxWidth: to }, { display: 'none' });
 export const hideInPrint = media({ type: 'print' }, { display: 'none' });

@@ -26,6 +26,12 @@ cssRule('@media print', {
     },
   },
 });
+cssRule('@page', {
+    marginTop: '0.75in',
+    marginBottom: '0.75in',
+    marginLeft: '0.75in',
+    marginRight: '0.75in',
+});
 cssRule('button', {
   cursor: 'pointer',
   background: 'transparent',

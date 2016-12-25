@@ -7,8 +7,11 @@ export const itemContainerStyle = style(vertical,
   media({ minWidth: 0, maxWidth: 619 }, {
     width: '100%',
     padding: '1rem 6rem',
-  }), media({ minWidth: 620 }, {
+  }), media({ minWidth: 620, maxWidth: 839 }, {
     width: '50rem',
+    padding: '1rem 0rem',
+  }), media({ minWidth: 840}, {
+    width: '38rem',
     padding: '1rem 0rem',
   }), media({ type: 'print'}, {
     width: '50rem',
@@ -25,6 +28,9 @@ export const priceStyle = style({ alignSelf: 'flex-end' });
 export const priceAmountStyle = style({
   fontSize: '2.5rem',
 }, media({ type: 'print' }, { fontSize: '2rem' }));
+const priceParagraphStyle = style(
+  media({minWidth: 840}, { })
+);
 
 interface ISteikarHladbordItemProps {
   header: string;
@@ -52,7 +58,7 @@ export const SteikarHladbordItem = (props: ISteikarHladbordItemProps) => {
       <H2 className={itemHeaderStyle}>{props.header}</H2>
       <span className={itemIdStyle}>Vörunúmer {props.id}</span>
       {paragraphs}
-      <P className={classes(priceStyle, paddingTop)}>
+      <P className={classes(priceParagraphStyle, priceStyle, paddingTop)}>
         Verð á mann <span className={priceAmountStyle}>{props.price} kr</span>
       </P>
     </div>
