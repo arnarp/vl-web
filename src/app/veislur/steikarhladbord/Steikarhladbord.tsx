@@ -34,12 +34,6 @@ const steak2Paragraphs = [
 
 // tslint:disable:max-line-length
 const containerStyle = style(vertical, center);
-// const extraInfoStyle = style({
-//   paddingTop: '1rem',
-//   paddingBottom: '2rem',
-//   maxWidth: '80vw',
-//   alignSelf: 'center',
-// });
 const paddingTopSm = style({ paddingTop: '1rem' });
 const imgStyle = style(media({ minWidth: 695 }, {
   backgroundPosition: '0rem -5rem !important',
@@ -48,7 +42,7 @@ const headerStyle = style(
   media({ type: 'print' }, { paddingBottom: '0 !important' })
 );
 const productsContainerStyle = style(
-  media({minWidth: 840}, horizontal, center, {
+  media({type: 'screen', minWidth: 840}, horizontal, center, {
     alignItems: 'stretch',
   })
 );

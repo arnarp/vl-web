@@ -8,7 +8,9 @@ const defaultStyle = style({
   fontWeight: 'lighter',
 },
   media({type: 'print'}, {
-    fontSize: '1.4rem',
+    fontSize: '12pt',
+    fontFamily: 'Helvetica',
+    maxWidth: '16cm',
   })
 );
 

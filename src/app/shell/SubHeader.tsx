@@ -20,7 +20,9 @@ const navListStyle = style({
     },
   },
 },
-  media({type: 'print'}, { display: 'none'})
+  media({ type: 'print' }, { display: 'none' }),
+  media({ type: 'screen', minWidth: 500 }, { padding: '0 2rem' }),
+  media({ type: 'screen', minWidth: 900 }, { fontSize: '2rem' }),
 );
 const activeLinkStyle = style({
   textDecoration: 'underline',

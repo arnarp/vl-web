@@ -14,8 +14,7 @@ export const itemContainerStyle = style(vertical,
     width: '38rem',
     padding: '1rem 0rem',
   }), media({ type: 'print'}, {
-    width: '50rem',
-    padding: '1rem 0rem',
+    width: 'auto',
     textAlign: 'justify',
   })
 );

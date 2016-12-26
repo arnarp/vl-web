@@ -43,8 +43,6 @@ export class Html extends React.Component<IHtmlProps, {}> {
           {head.meta.toComponent()}
           {head.link.toComponent()}
           {head.script.toComponent()}
-          <link rel='stylesheet' type='text/css'
-            href='https://fonts.googleapis.com/css?family=Poppins:light,regular,medium|Playfair+Display:light' />
           {renderStyles}
           <style id='css-target'>
             ${getStyles()}

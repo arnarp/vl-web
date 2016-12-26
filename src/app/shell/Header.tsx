@@ -41,16 +41,15 @@ const headerStyle = style({
   zIndex: 100,
 },
   media({ type: 'print' }, { height: '5rem' }),
-  media({ type: 'screen' }, { position: 'fixed' })
+  media({ type: 'screen' }, { position: 'fixed' }),
+  media({ minWidth: 500 }, { padding: '0 2rem' }),
 );
 const imgStyle = style({
   height: '5rem',
 });
 const phoneNumberStyle = style({
   fontSize: '3rem',
-  fontFamily: 'Playfair Display',
   color: VlLogoRed.toString(),
-  fontWeight: 'lighter',
   display: 'flex',
   alignItems: 'flex-end',
   lineHeight: 0.8,

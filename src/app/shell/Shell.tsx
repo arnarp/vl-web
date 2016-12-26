@@ -15,7 +15,7 @@ cssRule('html', {
   fontSize: '10px',
 });
 cssRule('html, button, input, optgroup, select, textarea', {
-  fontFamily: '"Poppins", sans-serif',
+  fontFamily: '"Helvetica", sans-serif',
   fontWeight: 'lighter',
   color: VlLogoGrey.toString(),
 });
@@ -27,10 +27,7 @@ cssRule('@media print', {
   },
 });
 cssRule('@page', {
-    marginTop: '0.75in',
-    marginBottom: '0.75in',
-    marginLeft: '0.75in',
-    marginRight: '0.75in',
+    margin: '1.5cm',
 });
 cssRule('button', {
   cursor: 'pointer',

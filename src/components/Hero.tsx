@@ -24,8 +24,6 @@ export const Hero = (props: IHeroProps) => {
     backgroundRepeat: 'no-repeat',
     backgroundPosition: props.backroundPosition || '-15rem -5rem',
     color: 'white',
-    fontFamily: 'Poppins',
-    fontWeight: 'lighter',
   });
   const headerStyle = style({
     fontSize: '5rem',
