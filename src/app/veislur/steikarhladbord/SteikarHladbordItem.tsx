@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { style, classes, media } from 'typestyle';
 import { vertical } from 'csstips';
-import { H2, P }  from 'components';
+import { H2, P } from 'components';
 
 export const itemContainerStyle = style(vertical,
   media({ minWidth: 0, maxWidth: 619 }, {
@@ -10,10 +10,10 @@ export const itemContainerStyle = style(vertical,
   }), media({ minWidth: 620, maxWidth: 839 }, {
     width: '50rem',
     padding: '1rem 0rem',
-  }), media({ minWidth: 840}, {
+  }), media({ minWidth: 840 }, {
     width: '38rem',
     padding: '1rem 0rem',
-  }), media({ type: 'print'}, {
+  }), media({ type: 'print' }, {
     width: 'auto',
     textAlign: 'justify',
   })
@@ -28,7 +28,7 @@ export const priceAmountStyle = style({
   fontSize: '2.5rem',
 }, media({ type: 'print' }, { fontSize: '2rem' }));
 const priceParagraphStyle = style(
-  media({minWidth: 840}, { })
+  media({ minWidth: 840 }, { marginTop: 'auto' })
 );
 
 interface ISteikarHladbordItemProps {

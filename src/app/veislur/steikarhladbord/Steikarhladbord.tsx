@@ -44,7 +44,11 @@ const headerStyle = style(
 const productsContainerStyle = style(
   media({type: 'screen', minWidth: 840}, horizontal, center, {
     alignItems: 'stretch',
-  })
+  }),
+  media({ type: 'screen', minWidth: 940 }, {
+    width: '90rem',
+    justifyContent: 'space-between',
+  }),
 );
 
 export const Steikarhladbord = () => (
