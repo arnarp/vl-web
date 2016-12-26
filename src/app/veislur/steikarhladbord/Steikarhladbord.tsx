@@ -35,7 +35,7 @@ const steak2Paragraphs = [
 // tslint:disable:max-line-length
 const containerStyle = style(vertical, center);
 const paddingTopSm = style({ paddingTop: '1rem' });
-const imgStyle = style(media({ minWidth: 695 }, {
+const imgStyle = style(media({ minWidth: 695, maxWidth: 900 }, {
   backgroundPosition: '0rem -5rem !important',
 }));
 const headerStyle = style(
