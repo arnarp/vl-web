@@ -37,12 +37,15 @@ const containerStyle = style(vertical, center, verticallySpaced('1rem'));
 const contentContainerStyle = style(
   vertical,
   verticallySpaced('1rem'),
-  { width: '100%'},
+  media({ minWidth: 0, maxWidth: 619}, { width: '100%'}),
+  media({ type: 'screen', minWidth: 620, maxWidth: 839 }, { width: '50rem' }),
+  media({ type: 'screen', minWidth: 840, maxWidth: 939 }, { width: '100%' }),
+  media({ type: 'screen', minWidth: 940, maxWidth: 1119 }, { width: '90rem' }),
+  media({ type: 'screen', minWidth: 1120 }, { width: '100rem' }),
   media({ type: 'screen', minWidth: 0, maxWidth: 374 }, { padding: '0 2rem' }),
   media({ type: 'screen', minWidth: 375, maxWidth: 619 }, { padding: '0 6rem' }),
-  media({ type: 'screen', minWidth: 620, maxWidth: 839 }, { width: '50rem' }),
   media({ type: 'screen', minWidth: 840, maxWidth: 939 }, { padding: '0 2rem' }),
-  media({ type: 'screen', minWidth: 940 }, { width: '90rem', padding: 0 }),
+  media({ type: 'screen', minWidth: 940 }, { padding: 0 }),
   media({ type: 'print' }, { width: 'auto', textAlign: 'justify' }),
 );
 const paddingTopSm = style({ paddingTop: '1rem' });

@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router';
 import { style, media } from 'typestyle';
-import { vertical, centerJustified} from 'csstips';
+import { vertical, centerJustified }  from 'csstips';
 import { IStore } from 'store';
 import { VlLogoRed } from 'app/colors';
 import { IToggleMenuAction } from './actions';
@@ -44,11 +45,11 @@ const headerStyle = style({
   media({ minWidth: 700 }, { height: `${HEADER_HEIGHT_LG}rem` }),
   media({ type: 'print' }, { height: '5rem' }),
   media({ type: 'screen' }, { position: 'fixed' }),
-  media({ minWidth: 0, maxWidth: 499 }, { padding: '0 1rem 0.3rem 1rem'}),
+  media({ minWidth: 0, maxWidth: 499 }, { padding: '0 1rem 0.3rem 1rem' }),
   media({ minWidth: 500 }, { padding: '0 2rem 0.3rem 2rem' }),
 );
 const imgStyle = style(
-  media({ minWidth: 0, maxWidth: 699}, { width: '15rem', height: '5rem' }),
+  media({ minWidth: 0, maxWidth: 699 }, { width: '15rem', height: '5rem' }),
   media({ minWidth: 700 }, { width: '21rem', height: '7rem' }),
 );
 const phoneNumberStyle = style({
@@ -82,8 +83,12 @@ class HeaderBase extends React.Component<IStateProps & IDispatchProps & IHeaderP
             onClick={this.props.toggleMenu} />
         </div>
         <div className={centerStyle}>
-          <Logo className={imgStyle} />
-          <span className={phoneNumberStyle}>5551810</span>
+          <Link className={imgStyle} to='/'>
+            <Logo className={imgStyle} />
+          </Link>
+          <a className={phoneNumberStyle} href='tel:5551810' title='Hringja í 555 1810'>
+            5551810
+          </a>
         </div>
         <div className={rightStyle} />
       </div>
