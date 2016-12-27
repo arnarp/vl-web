@@ -48,6 +48,7 @@ const shellClass = style({
 });
 const mainStyle = style({
   minHeight: `calc(100vh - ${SUB_HEADER_HEIGHT + FOOTER_HEIGHT}rem)`,
+  paddingBottom: '2rem',
 });
 
 export class Shell extends React.Component<{}, {}> {

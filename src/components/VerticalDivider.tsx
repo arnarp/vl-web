@@ -5,7 +5,6 @@ import { VlLogoRed } from 'app/colors';
 const dividerStyle = style({
   background: VlLogoRed.toString(),
   content: '',
-  margin: '0 2rem',
   width: '0.1rem',
 });
 

@@ -26,18 +26,19 @@ export const Hero = (props: IHeroProps) => {
     color: 'white',
   });
   const headerStyle = style({
-    fontSize: '5rem',
+    position: 'relative',
+    top: '0.1rem',
+    padding: '2rem',
     background: 'white',
     color: VlLogoGrey.toString(),
     mixBlendMode: 'screen',
-    position: 'relative',
-    top: '0.1rem',
+    fontSize: '5rem',
     textDecoration: 'underline',
   });
   const paragraphStyle = style({
+    padding: '0 2rem',
     color: VlLogoGrey.toString(),
     fontSize: '1.6rem',
-    padding: '0 2rem',
   });
   const iconStyle = style({
     height: '5rem',

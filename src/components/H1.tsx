@@ -2,16 +2,16 @@ import * as React from 'react';
 import { style, media, classes } from 'typestyle';
 
 const defaultStyle = style({
+  width: '100%',
+  margin: 0,
+  padding: 0,
   fontSize: '4rem',
   fontWeight: 'lighter',
-  margin: 0,
   textAlign: 'center',
-  width: '100%',
-  padding: '2rem',
 },
   media({type: 'print'}, {
-    fontSize: '3rem',
     padding: '1rem',
+    fontSize: '3rem',
   })
 );
 

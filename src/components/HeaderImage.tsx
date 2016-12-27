@@ -4,14 +4,17 @@ import { flex, vertical, endJustified } from 'csstips';
 import { H1 } from 'components';
 
 interface IHeaderImagesProps {
-  imgUrl: string;
+  imgUrl480: string;
+  imgUrl960: string;
+  imgUrl1920: string;
   imgStyle?: string;
   header: string;
   headerStyle?: string;
 }
 const headerStyle = style({
-  background: 'white',
   position: 'relative',
+  padding: '2rem !important',
+  background: 'white',
 },
   media({ type: 'screen' }, {
     fontWeight: 'normal',
@@ -21,21 +24,22 @@ const headerStyle = style({
   }),
   media({ maxWidth: 355 }, { fontSize: '3rem' }),
 );
+const baseImgStyle = style(
+  flex, vertical, endJustified,
+  { backgroundRepeat: 'no-repeat', width: '100%' },
+  media({ type: 'screen', minWidth: 0, maxWidth: 480 }, { height: '50vh', maxHeight: '48rem' }),
+  media({ type: 'screen', minWidth: 481, maxWidth: 960 }, { height: '50vh', maxHeight: '64rem' }),
+  media({ type: 'screen', minWidth: 961 }, { height: '70vh', maxHeight: '128rem' })
+);
 
 export const HeaderImage = (props: IHeaderImagesProps) => {
-  const imgStyle = style(flex, vertical, endJustified, {
-    backgroundImage: `url(${props.imgUrl})`,
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: '-20rem -5rem',
-    width: '100%',
-  }, media({ type: 'screen', minWidth: 0, maxWidth: 899 }, {
-    height: '50vh',
-  }), media( { type: 'screen', minWidth: 900 }, {
-    height: '60rem',
-    backgroundPosition: 'center',
-  }));
+  const imgStyle = style(
+    media({ minWidth: 0, maxWidth: 480 }, { backgroundImage: `url(${props.imgUrl480})` }),
+    media({ minWidth: 481, maxWidth: 960 }, { backgroundImage: `url(${props.imgUrl960})` }),
+    media({ minWidth: 961 }, { backgroundImage: `url(${props.imgUrl1920})` }),
+  );
   return (
-    <div className={classes(imgStyle, props.imgStyle)}>
+    <div className={classes(baseImgStyle, imgStyle, props.imgStyle)}>
       <H1 className={classes(headerStyle, props.headerStyle)}>{props.header}</H1>
     </div>
   );

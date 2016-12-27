@@ -1,21 +1,14 @@
 import * as React from 'react';
 import { style, classes, media } from 'typestyle';
 import { vertical } from 'csstips';
-import { H2, P } from 'components';
+import { H2, P, Price } from 'components';
 
 export const itemContainerStyle = style(vertical,
-  media({ minWidth: 0, maxWidth: 619 }, {
-    width: '100%',
-    padding: '1rem 6rem',
-  }), media({ minWidth: 620, maxWidth: 839 }, {
-    width: '50rem',
-    padding: '1rem 0rem',
-  }), media({ minWidth: 840 }, {
+  { width: '100%' },
+  media({ minWidth: 840 }, {
     width: '38rem',
-    padding: '1rem 0rem',
   }), media({ type: 'print' }, {
     width: 'auto',
-    textAlign: 'justify',
   })
 );
 const itemHeaderStyle = style(media({ maxWidth: 367 }, { fontSize: '2.2rem' }));
@@ -24,9 +17,6 @@ const itemIdStyle = style({
 });
 const paddingTop = style({ paddingTop: '1rem' });
 export const priceStyle = style({ alignSelf: 'flex-end' });
-export const priceAmountStyle = style({
-  fontSize: '2.5rem',
-}, media({ type: 'print' }, { fontSize: '2rem' }));
 const priceParagraphStyle = style(
   media({ minWidth: 840 }, { marginTop: 'auto' })
 );
@@ -58,7 +48,7 @@ export const SteikarHladbordItem = (props: ISteikarHladbordItemProps) => {
       <span className={itemIdStyle}>Vörunúmer {props.id}</span>
       {paragraphs}
       <P className={classes(priceParagraphStyle, priceStyle, paddingTop)}>
-        Verð á mann <span className={priceAmountStyle}>{props.price} kr</span>
+        Verð á mann <Price amount={props.price} />
       </P>
     </div>
   );

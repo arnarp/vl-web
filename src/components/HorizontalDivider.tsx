@@ -6,8 +6,7 @@ const dividerStyle = style({
   background: VlLogoRed.toString(),
   content: '',
   height: '0.1rem',
-  margin: '1rem auto',
-  width: '80%',
+  width: '100%',
 });
 
 export const HorizontalDivider = (props: {className?: string}) => (

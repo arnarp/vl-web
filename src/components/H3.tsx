@@ -5,10 +5,9 @@ const defaultStyle = style({
   width: '100%',
   margin: 0,
   padding: 0,
-  paddingBottom: '1rem',
   fontSize: '2rem',
   fontWeight: 'lighter',
-  textAlign: 'center',
+  textAlign: 'left',
 },
   media({type: 'print'}, {
     fontSize: '1.8rem',
