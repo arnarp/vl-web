@@ -2,9 +2,9 @@ const appConfig = require('../../../config/main');
 import * as React from 'react';
 import * as Helmet from 'react-helmet';
 import { setupPage, normalize } from 'csstips';
-import { style, cssRule } from 'typestyle';
+import { style, cssRule, media } from 'typestyle';
 import { VlLogoGrey } from 'app/colors';
-import { Header } from './Header';
+import { Header, HEADER_HEIGHT_LG, HEADER_HEIGHT_SM } from './Header';
 import { SubHeader, SUB_HEADER_HEIGHT } from './SubHeader';
 import { Footer, FOOTER_HEIGHT } from './Footer';
 import { SideNav } from './SideNav';
@@ -46,10 +46,14 @@ const shellClass = style({
   margin: 0,
   textAlign: 'left',
 });
-const mainStyle = style({
-  minHeight: `calc(100vh - ${SUB_HEADER_HEIGHT + FOOTER_HEIGHT}rem)`,
-  paddingBottom: '2rem',
-});
+const mainStyle = style({ paddingBottom: '2rem' },
+  media({ minWidth: 0, maxWidth: 699 }, {
+    minHeight: `calc(100vh - ${HEADER_HEIGHT_SM + SUB_HEADER_HEIGHT + FOOTER_HEIGHT}rem)`,
+  }),
+  media({ minWidth: 700 }, {
+    minHeight: `calc(100vh - ${HEADER_HEIGHT_LG + SUB_HEADER_HEIGHT + FOOTER_HEIGHT}rem)`,
+  }),
+);
 
 export class Shell extends React.Component<{}, {}> {
   public render() {

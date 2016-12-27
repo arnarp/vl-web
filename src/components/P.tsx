@@ -11,7 +11,9 @@ const defaultStyle = style({
     fontSize: '12pt',
     fontFamily: 'Helvetica',
     maxWidth: '16cm',
-  })
+  }),
+  media({ minWidth: 0, maxWidth: 960 }, { fontSize: '1.6rem'}),
+  media({ minWidth: 961}, { fontSize: '2rem'}),
 );
 
 export const P = (props: {className?: string, children?: any}) => (

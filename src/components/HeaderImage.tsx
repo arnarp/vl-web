@@ -22,7 +22,8 @@ const headerStyle = style({
     top: '0.1rem',
     textDecoration: 'underline',
   }),
-  media({ maxWidth: 355 }, { fontSize: '3rem' }),
+  media({ maxWidth: 355 }, { fontSize: '3rem !important' }),
+  media({ minWidth: 720 }, { fontSize: '6rem !important' }),
 );
 const baseImgStyle = style(
   flex, vertical, endJustified,

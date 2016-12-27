@@ -1,35 +1,44 @@
 import * as React from 'react';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
-import { style, classes } from 'typestyle';
+import { style, classes, media } from 'typestyle';
 import { flex, vertical } from 'csstips';
 import { IStore } from 'store';
-import { VlLogoGrey } from 'app/colors';
+import { VlLogoGrey } from 'app/colors';
 import { IToggleMenuAction } from './actions';
 import { createToggleMenuAction } from './action-creators';
-import { HEADER_HEIGHT } from './Header';
+import { HEADER_HEIGHT_LG, HEADER_HEIGHT_SM } from './Header';
 
 const overlayStyle = style({
   position: 'fixed',
-  top: `${HEADER_HEIGHT}rem`,
   width: '100vw',
-  height: `calc(100vh - ${HEADER_HEIGHT}rem)`,
   overflow: 'hidden',
+  zIndex: 99,
   backgroundColor: 'rgba(0,0,0,0.5)',
-});
+}, media({ minWidth: 0, maxWidth: 699 }, {
+  top: `${HEADER_HEIGHT_SM}rem`,
+  height: `calc(100vh - ${HEADER_HEIGHT_SM}rem)`,
+}), media({ minWidth: 700 }, {
+  top: `${HEADER_HEIGHT_LG}rem`,
+  height: `calc(100vh - ${HEADER_HEIGHT_LG}rem)`,
+}));
 const asideStyle = style(flex, vertical, {
   position: 'fixed',
   right: '100vw',
-  top: `${HEADER_HEIGHT}rem`,
   width: '25rem',
-  height: `calc(100vh - ${HEADER_HEIGHT}rem)`,
   overflow: 'hidden',
   transitionDuration: '600ms',
   transitionTimingFunction: 'ease-in-out',
   background: 'white',
   padding: '2rem',
   zIndex: 100,
-});
+}, media({ minWidth: 0, maxWidth: 699 }, {
+  top: `${HEADER_HEIGHT_SM}rem`,
+  height: `calc(100vh - ${HEADER_HEIGHT_SM}rem)`,
+}), media({ minWidth: 700 }, {
+  top: `${HEADER_HEIGHT_LG}rem`,
+  height: `calc(100vh - ${HEADER_HEIGHT_LG}rem)`,
+}));
 const asideVisibleStyle = style({
   right: 'calc(100vw - 25rem)',
 });

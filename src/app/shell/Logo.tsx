@@ -1,9 +1,8 @@
 /* tslint:disable:max-line-length */
 import * as React from 'react';
-import { style, classes } from 'typestyle';
 
 export const Logo = (props: {className?: string}) => (
-  <svg className={classes(style({width: '15rem'}), props.className)} width='368pt' height='90pt'
+  <svg className={props.className} width='368pt' height='90pt'
     viewBox='59 0 250 90'
     xmlns='http://www.w3.org/2000/svg'>
     <path fill='#ffffff'

@@ -4,12 +4,10 @@ import { vertical } from 'csstips';
 import { H2, P, Price } from 'components';
 
 export const itemContainerStyle = style(vertical,
-  { width: '100%' },
-  media({ minWidth: 840 }, {
-    width: '38rem',
-  }), media({ type: 'print' }, {
-    width: 'auto',
-  })
+  media({ minWidth: 0, maxWidth: 839}, { width: '100%' }),
+  media({ minWidth: 840, maxWidth: 960 }, { width: '38rem' }),
+  media({ minWidth: 961 }, { width: '42rem' }),
+  media({ type: 'print' }, { width: 'auto' }),
 );
 const itemHeaderStyle = style(media({ maxWidth: 367 }, { fontSize: '2.2rem' }));
 const itemIdStyle = style({
